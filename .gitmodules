@@ -1,0 +1,6 @@
+[submodule "modules/applications/editors/neovim/config"]
+	path = modules/applications/editors/neovim/config
+	url = git@github.com:polnio/nvim-config.git
+[submodule "modules/applications/utilities/ags/config"]
+	path = modules/applications/utilities/ags/config
+	url = git@github.com:polnio/ags-config.git

@@ -1,0 +1,12 @@
+--- a/data/org.spice-space.lowlevelusbaccess.policy	1970-01-01 01:00:01.000000000 +0100
++++ b/data/org.spice-space.lowlevelusbaccess.policy	2024-04-25 23:42:28.479550623 +0200
+@@ -12,7 +12,8 @@
+     <description>Low level USB device access</description>
+     <message>Privileges are required for low level USB device access (for usb device pass through).</message>
+     <defaults>
+-      <allow_inactive>no</allow_inactive>
++      <allow_any>yes</allow_any>
++      <allow_inactive>yes</allow_inactive>
+       <allow_active>yes</allow_active>
+     </defaults>
+   </action>
