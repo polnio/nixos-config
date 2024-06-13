@@ -1,4 +1,4 @@
-{ pkgs, inputs, lib, hmConfig, ... }: {
+{ pkgs, inputs, ... }: {
   inputs = {
     firefox-gnome-theme = {
       url = "github:rafaelmardojai/firefox-gnome-theme";
@@ -231,22 +231,4 @@
 
   hm.home.file.".mozilla/firefox/default/chrome/firefox-gnome-theme/customChrome.css".source =
     ./customChrome.css;
-  /* hm.home.activation.catppuccin-firefox-gnome =
-     {
-       before = [ ];
-       after = [ "writeBoundary" ];
-       data = ''
-         run ${pkgs.gnused}/bin/sed -n '/^TEMPLATE = """$/,/^"""$/p' ${inputs.catppuccin-firefox-gnome} \
-           | ${pkgs.coreutils}/bin/tail -n +2 \
-           | ${pkgs.coreutils}/bin/head -n -1 \
-           > ${hmConfig.home.homeDirectory}/.mozilla/firefox/default/chrome/firefox-gnome-theme/customChrome.css
-       '';
-     };
-  */
-
-  /* hm.home.file.".mozilla/firefox/default/chrome/firefox-gnome-theme" = {
-       source = ./firefox-gnome-theme;
-       recursive = true;
-     };
-  */
 }

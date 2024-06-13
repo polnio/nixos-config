@@ -1,8 +1,5 @@
-{ config, pkgs, ... }: {
-  os.programs.neovim = {
-    enable = true;
-    # defaultEditor = true;
-  };
+{ pkgs, ... }: {
+  os.programs.neovim = { enable = true; };
   hm.xdg.configFile."nvim" = {
     source = ./config;
     recursive = true;
@@ -39,7 +36,6 @@
 
   hm.home.sessionVariables = {
     EDITOR = "neovide";
-    # UNCRUSTIFY_CONFIG = "-";
     UNCRUSTIFY_CONFIG = ./uncrustify.cfg;
   };
 }

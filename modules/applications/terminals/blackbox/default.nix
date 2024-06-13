@@ -17,7 +17,6 @@
     theme-dark = "Catppuccin-Mocha";
 
     use-custom-command = true;
-    # custom-shell-command = "${pkgs.zsh}/bin/zsh";
     custom-shell-command = "${pkgs.fish}/bin/fish";
     use-sixel = true;
     was-maximized = true;

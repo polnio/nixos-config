@@ -23,7 +23,6 @@ in combinedManager.mkFlake {
       modules = [
         ./configuration.nix
         ({ lib, ... }: { imports = (import ./utils { inherit lib; }).modules; })
-        # ./modules/applications/windows-managers/hyprland
       ];
     };
   };

@@ -8,11 +8,6 @@ let
 in {
   hm.wayland.windowManager.hyprland.settings.env = [
     "XCURSOR_SIZE,24"
-    # "QT_QPA_PLATFORMTHEME,qt5ct"
-
-    # "GTK_IM_MODULE,fcitx"
-    # "XMODIFIERS,@im=fcitx"
-    # "QT_IM_MODULE,fcitx"
 
     "QT_QPA_PLATFORM,wayland"
     "XDG_CURRENT_DESKTOP,sway"

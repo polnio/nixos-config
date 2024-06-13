@@ -50,7 +50,6 @@
               powerline_symbol = "";
               foreground = "#${base00}";
               background = "#${base0B}";
-              # template = " {{ .HEAD }}";
               properties = {
                 fetch_status = true;
                 fetch_upstream_icon = true;

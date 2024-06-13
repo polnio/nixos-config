@@ -1,6 +1,5 @@
 { pkgs, inputs, ... }: {
   inputs.hyprland.url = "github:hyprwm/Hyprland?ref=v0.39.1";
-  # inputs.hyprland.url = "github:hyprwm/Hyprland?ref=v0.40.0";
   # hmModules = [ inputs.hyprland.homeManagerModules.default ];
   imports = [
     ./animations.nix

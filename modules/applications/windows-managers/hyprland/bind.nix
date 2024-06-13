@@ -19,21 +19,12 @@ in {
   hm.wayland.windowManager.hyprland.settings = {
     bind = [
       "$mod SHIFT, R, exec, hyprctl reload"
-      # "$mod, M, exit,"
       "$mod, D, exec, $menu"
-      # "$mod SHIFT, D, exec, ags -r \"globalThis.confirmSubject.setValue('shutdown')\""
       ''
         $mod SHIFT, D, exec, ${agsPackage}/bin/ags -r "globalThis.confirmSubject.setValue('shutdown')"''
-      # "$mod SHIFT, S, exec, grim -g \"$(slurp)\" - | swappy -f -"
-      # "ALT, tab, hycov:toggleoverview"
-      # "ALT, grave, hycov:toggleoverview, forceall"
       ''
         $mod SHIFT, S, exec, ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp)" - | ${pkgs.swappy}/bin/swappy -f -''
-      # "$mod CONTROL, V, exec, firefox"
-      # "$mod CONTROL, C, exec, $terminal nvim"
-      # "$mod CONTROL, D, exec, vesktop"
       "$mod CONTROL, V, exec, ${pkgs.firefox}/bin/firefox"
-      # "$mod CONTROL, C, exec, $terminal ${pkgs.neovim}/bin/nvim"
       "$mod CONTROL, C, exec, ${pkgs.neovide}/bin/neovide"
       "$mod CONTROL, D, exec, ${pkgs.vesktop}/bin/vesktop"
 
@@ -65,14 +56,6 @@ in {
       "$mod CONTROL, ${x.right}, resizeactive, 10 0"
       "$mod CONTROL, ${x.up}, resizeactive, 0 -10"
       "$mod CONTROL, ${x.down}, resizeactive, 0 10"
-      # "$mod, ${x.left}, movefocus, l"
-      # "$mod, ${x.right}, movefocus, r"
-      # "$mod, ${x.up}, movefocus, u"
-      # "$mod, ${x.down}, movefocus, d"
-      # "$mod SHIFT, ${x.left}, movewindoworgroup, l"
-      # "$mod SHIFT, ${x.right}, movewindoworgroup, r"
-      # "$mod SHIFT, ${x.up}, movewindoworgroup, u"
-      # "$mod SHIFT, ${x.down}, movewindoworgroup, d"
       "$mod, ${x.left}, hy3:movefocus, l"
       "$mod, ${x.right}, hy3:movefocus, r"
       "$mod, ${x.up}, hy3:movefocus, u"
