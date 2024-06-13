@@ -1,6 +1,4 @@
 { ... }: {
-  os.programs.nh = {
-    enable = true;
-    flake = /etc/nixos;
-  };
+  os.programs.nh.enable = true;
+  os.environment.variables.FLAKE = "${/etc/nixos}?submodules=1";
 }
