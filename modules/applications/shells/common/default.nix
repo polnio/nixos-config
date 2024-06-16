@@ -16,7 +16,8 @@
     gau = ''echo -e "a\n*\nq\n" | git add -i > /dev/null'';
     gaa = "git add -A";
     gs = "git status";
-    gc = "git commit";
+    gc = "EDITOR=nvim git commit";
     gd = "git diff";
+    gp = "git push";
   };
 }
