@@ -1,6 +1,4 @@
-{ pkgs, inputs, ... }: {
-  inputs.hyprland.url = "github:hyprwm/Hyprland?ref=v0.39.1";
-  # hmModules = [ inputs.hyprland.homeManagerModules.default ];
+{ pkgs, ... }: {
   imports = [
     ./animations.nix
     ./bind.nix
@@ -17,6 +15,5 @@
     ./windowrule.nix
   ];
 
-  os.environment.systemPackages =
-    [ inputs.hyprland.packages.${pkgs.system}.hyprland ];
+  os.environment.systemPackages = [ pkgs.hyprland ];
 }

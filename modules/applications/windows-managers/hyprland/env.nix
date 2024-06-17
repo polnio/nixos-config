@@ -1,9 +1,8 @@
-{ inputs, pkgs, ... }:
+{ pkgs, ... }:
 let
   xdg_desktop_portal_dir = pkgs.symlinkJoin {
     name = "xdg-portals";
-    paths =
-      [ inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland ];
+    paths = [ pkgs.xdg-desktop-portal-hyprland ];
   };
 in {
   hm.wayland.windowManager.hyprland.settings.env = [

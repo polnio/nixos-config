@@ -1,20 +1,8 @@
-{ pkgs, inputs, ... }: {
-  inputs = {
-    hy3 = {
-      url = "github:outfoxxed/hy3?ref=hl0.39.1";
-      inputs.hyprland.follows = "hyprland";
-    };
-  };
-
-  os.services.displayManager.sessionPackages =
-    [ inputs.hyprland.packages.${pkgs.system}.hyprland ];
-
+{ pkgs, ... }: {
   os.xdg.portal = {
     enable = true;
-    extraPortals = [
-      inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland
-      pkgs.xdg-desktop-portal-gtk
-    ];
+    extraPortals =
+      [ pkgs.xdg-desktop-portal-hyprland pkgs.xdg-desktop-portal-gtk ];
     config.common.default = "*";
   };
 
@@ -22,9 +10,8 @@
 
   hm.wayland.windowManager.hyprland = {
     enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     plugins = [
-      inputs.hy3.packages.${pkgs.system}.hy3
+      pkgs.hyprlandPlugins.hy3
       # inputs.hycov.packages.${pkgs.system}.hycov
     ];
   };
