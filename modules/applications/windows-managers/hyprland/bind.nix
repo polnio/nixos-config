@@ -27,6 +27,10 @@ in {
       "$mod CONTROL, V, exec, ${pkgs.firefox}/bin/firefox"
       "$mod CONTROL, C, exec, ${pkgs.neovide}/bin/neovide"
       "$mod CONTROL, D, exec, ${pkgs.vesktop}/bin/vesktop"
+      "$mod CONTROL, M, exec, xdg-open https://mail.google.com"
+      "$mod CONTROL, W, exec, xdg-open https://web.whatsapp.com"
+      "$mod CONTROL, G, exec, xdg-open https://github.com"
+      "$mod CONTROL, P, exec, xdg-open https://github.com/polnio"
 
       "$mod, Return, exec, $terminal"
       "$mod, B, hy3:makegroup, v"
