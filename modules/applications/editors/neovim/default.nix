@@ -32,6 +32,7 @@
     uncrustify
     vala-language-server
     vala-lint
+    vscode-langservers-extracted
   ];
 
   hm.home.sessionVariables = {
