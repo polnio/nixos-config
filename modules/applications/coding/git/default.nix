@@ -12,9 +12,11 @@
   };
 
   hm.home.shellAliases = {
+    g = "git";
     ga = "git add";
     gau = ''echo -e "a\n*\nq\n" | git add -i > /dev/null'';
     gaa = "git add -A";
+    gr = "git restore";
     gs = "git status";
     gc = "EDITOR=nvim git commit";
     gd = "git diff";
