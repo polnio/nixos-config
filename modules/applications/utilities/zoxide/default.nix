@@ -5,4 +5,9 @@
     enableZshIntegration = true;
     enableFishIntegration = true;
   };
+
+  hm.home.shellAliases = {
+    zp = "z ~/Documents/prog";
+    zt = "z ~/Documents/prog/test";
+  };
 }

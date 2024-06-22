@@ -7,4 +7,9 @@
     git = true;
     icons = true;
   };
+
+  hm.home.shellAliases = {
+    l = "eza -la";
+    ll = "eza -l";
+  };
 }

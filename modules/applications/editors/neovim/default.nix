@@ -39,4 +39,6 @@
     EDITOR = "neovide";
     UNCRUSTIFY_CONFIG = ./uncrustify.cfg;
   };
+
+  hm.home.shellAliases = { n = "nvim"; };
 }
