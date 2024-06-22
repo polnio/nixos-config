@@ -20,6 +20,7 @@ in combinedManager.mkFlake {
   configurations = {
     PocoMachine = {
       system = "x86_64-linux";
+      specialArgs = { configDir = "/etc/nixos"; };
       modules = [
         ./configuration.nix
         ({ lib, ... }: { imports = (import ./utils { inherit lib; }).modules; })

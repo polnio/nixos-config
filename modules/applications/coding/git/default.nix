@@ -1,4 +1,4 @@
-{ ... }: {
+{ configDir, ... }: {
   os.programs.git.enable = true;
   hm.programs.git = {
     enable = true;
@@ -6,7 +6,7 @@
     userEmail = "polniolino@gmail.com";
     extraConfig = {
       init.defaultBranch = "master";
-      safe.directory = [ "/etc/nixos" ];
+      safe.directory = [ configDir ];
       push.autoSetupRemote = true;
     };
   };

@@ -1,4 +1,4 @@
-{ ... }: {
+{ configDir, ... }: {
   os.programs.nh.enable = true;
-  os.environment.variables.FLAKE = "/etc/nixos?submodules=1";
+  os.environment.variables.FLAKE = "${configDir}?submodules=1";
 }
