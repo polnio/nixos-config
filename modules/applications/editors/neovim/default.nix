@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, configDir, ... }: {
   os.programs.neovim = { enable = true; };
   hm.xdg.configFile."nvim" = {
     source = ./config;
@@ -10,9 +10,17 @@
     sha256 = "abfb9702b98d887c175ace58f1ab39733dc08d03b674d914f56344ef86e63b61";
   };
 
-  hm.programs.git.ignores = [ "Session.vim" ];
+  hm.programs.git = {
+    ignores = [ "Session.vim" ];
+    extraConfig = {
+      safe.directory =
+        [ "${configDir}/modules/applications/editors/neovim/config" ];
+    };
+  };
+
   os.environment.systemPackages = with pkgs; [
     neovide
+    (import ./nvims.nix { inherit pkgs; })
 
     biome
     rustup
