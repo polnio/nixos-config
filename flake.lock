@@ -290,6 +290,18 @@
         "type": "github"
       }
     },
+    "nvim-spell-fr": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-j+wfp6dAw7IrFUOb5YXvvqTgdkb+TnlHpQeL8VLZrJU=",
+        "type": "file",
+        "url": "http://ftp.vim.org/vim/runtime/spell/fr.utf-8.spl"
+      },
+      "original": {
+        "type": "file",
+        "url": "http://ftp.vim.org/vim/runtime/spell/fr.utf-8.spl"
+      }
+    },
     "prismlauncher-catppuccin": {
       "flake": false,
       "locked": {
@@ -313,6 +325,7 @@
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "nur": "nur",
+        "nvim-spell-fr": "nvim-spell-fr",
         "prismlauncher-catppuccin": "prismlauncher-catppuccin",
         "stylix": "stylix"
       }

@@ -1,14 +1,17 @@
-{ pkgs, configDir, ... }: {
+{ pkgs, inputs, configDir, ... }: {
+  inputs = {
+    nvim-spell-fr = {
+      url = "http://ftp.vim.org/vim/runtime/spell/fr.utf-8.spl";
+      flake = false;
+    };
+  };
   os.programs.neovim = { enable = true; };
   hm.xdg.configFile."nvim" = {
     source = ./config;
     recursive = true;
   };
 
-  hm.xdg.configFile."nvim/spell/fr.utf-8.spl".source = builtins.fetchurl {
-    url = "http://ftp.vim.org/vim/runtime/spell/fr.utf-8.spl";
-    sha256 = "abfb9702b98d887c175ace58f1ab39733dc08d03b674d914f56344ef86e63b61";
-  };
+  hm.xdg.configFile."nvim/spell/fr.utf-8.spl".source = inputs.nvim-spell-fr;
 
   hm.programs.git = {
     ignores = [ "Session.vim" ];
