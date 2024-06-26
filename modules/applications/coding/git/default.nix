@@ -20,6 +20,7 @@
     gs = "git status";
     gc = "EDITOR=nvim git commit";
     gd = "git diff";
+    gds = "git diff --staged";
     gp = "git push";
   };
 }
