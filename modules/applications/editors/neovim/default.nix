@@ -5,7 +5,8 @@
       flake = false;
     };
   };
-  os.programs.neovim = { enable = true; };
+  os.programs.neovim.enable = true;
+  hm.programs.neovim.enable = true;
   hm.xdg.configFile."nvim" = {
     source = ./config;
     recursive = true;
@@ -24,20 +25,26 @@
   os.environment.systemPackages = with pkgs; [
     neovide
     (import ./nvims.nix { inherit pkgs; })
-    gcc
-
+  ];
+  hm.programs.neovim.extraPackages = with pkgs; [
     biome
     clang-tools
     cppcheck
     cpplint
+    fd
+    gcc
+    gnumake
     go
     golangci-lint
     golangci-lint-langserver
     gopls
+    lua5_1
     lua-language-server
+    luajitPackages.luarocks
     nil
     nixfmt
     nodePackages_latest.typescript-language-server
+    python3
     ripgrep
     rustup
     typst-lsp
