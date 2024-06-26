@@ -24,9 +24,9 @@
   os.environment.systemPackages = with pkgs; [
     neovide
     (import ./nvims.nix { inherit pkgs; })
+    gcc
 
     biome
-    rustup
     clang-tools
     cppcheck
     cpplint
@@ -39,6 +39,7 @@
     nixfmt
     nodePackages_latest.typescript-language-server
     ripgrep
+    rustup
     typst-lsp
     uncrustify
     vala-language-server
