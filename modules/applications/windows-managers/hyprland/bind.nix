@@ -45,6 +45,7 @@ in {
       "$mod, minus, pin"
       "$mod, mouse_down, workspace, e+1"
       "$mod, mouse_up, workspace, e-1"
+      ''$mod, Space, exec, ags -r "globalThis.keyboard.switchLayout()"''
     ] ++ (builtins.concatLists (builtins.genList (x:
       let ws = builtins.toString (x + 1);
       in [
@@ -78,10 +79,8 @@ in {
       ", XF86MonBrightnessDown, exec, swayosd-client --brightness lower"
     ];
     bindi = [
-      ''
-        , Caps_Lock, exec, ags -r "globalThis.isCapsLock.value = !globalThis.isCapsLock.value"''
-      ''
-        , Num_Lock, exec, ags -r "globalThis.isNumLock.value = !globalThis.isNumLock.value"''
+      '', Caps_Lock, exec, ags -r "globalThis.keyboard.toogleCapsLock()"''
+      '', Num_Lock, exec, ags -r "globalThis.keyboard.toogleNumLock()"''
     ];
     bindm = [ "$mod, mouse:272, movewindow" "$mod, mouse:273, resizewindow" ];
     bindn = [ ", mouse:272, hy3:focustab, mouse" ];

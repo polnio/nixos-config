@@ -1,4 +1,4 @@
-{ pkgs, osConfig, lib, inputs, ... }: {
+{ pkgs, osConfig, lib, inputs, configDir, ... }: {
   inputs = {
     ags = {
       url = "github:Aylur/ags";
@@ -23,4 +23,10 @@
     (lib.attrsets.mapAttrs (name: value: "#${value}")
       osConfig.stylix.base16Scheme);
 
+  hm.programs.git = {
+    extraConfig = {
+      safe.directory =
+        [ "${configDir}/modules/applications/utilities/ags/config" ];
+    };
+  };
 }
