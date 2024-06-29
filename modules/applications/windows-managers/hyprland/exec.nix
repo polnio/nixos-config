@@ -7,6 +7,7 @@
       "vesktop --start-minimized"
       "teams-for-linux --minimized"
       "sleep 1; hyprctl reload"
+      "fcitx5"
     ];
   };
 }
