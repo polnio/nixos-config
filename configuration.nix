@@ -25,7 +25,7 @@ in {
   os.networking.networkmanager.enable = true;
   os.networking.hostName = "PocoMachine";
 
-  os.hardware.opengl.enable = true;
+  os.hardware.graphics.enable = true;
 
   hmUsername = user;
   os.users.users.${user} = {
