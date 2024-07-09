@@ -12,6 +12,8 @@
     recursive = true;
   };
 
+  hm.xdg.configFile."neovide/config.toml".text = "";
+
   hm.xdg.configFile."nvim/spell/fr.utf-8.spl".source = inputs.nvim-spell-fr;
 
   hm.programs.git = {
