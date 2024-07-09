@@ -12,6 +12,7 @@
     enable = true;
     plugins = [
       pkgs.hyprlandPlugins.hy3
+      pkgs.hyprlandPlugins.hyprbars
       # inputs.hycov.packages.${pkgs.system}.hycov
     ];
   };

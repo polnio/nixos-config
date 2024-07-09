@@ -1,1 +1,6 @@
-{ ... }: { os.programs.evince.enable = true; }
+{ ... }: {
+  os.programs.evince.enable = true;
+
+  hm.wayland.windowManager.hyprland.settings.windowrule =
+    [ "plugin:hyprbars:nobar,evince" ];
+}

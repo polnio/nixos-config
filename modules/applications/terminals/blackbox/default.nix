@@ -23,4 +23,7 @@
     terminal-bell = false;
     context-aware-header-bar = false;
   };
+
+  hm.wayland.windowManager.hyprland.settings.windowrule =
+    [ "plugin:hyprbars:nobar,com.raggesilver.BlackBox" ];
 }
