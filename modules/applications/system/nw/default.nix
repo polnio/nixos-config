@@ -18,4 +18,14 @@
       nix.os_flake = "${configDir}?submodules=1";
     };
   };
+
+  hm.home.shellAliases = {
+    nt = "nw os build -a";
+    ns = "nw os build -ab";
+    nb = "nw os build -b";
+    # nt = "sudo nixos-rebuild test";
+    # ns = "sudo nixos-rebuild switch";
+    # nb = "sudo nixos-rebuild boot";
+    nc = "sudo nix-collect-garbage -d && sudo nixos-rebuild boot";
+  };
 }
