@@ -14,4 +14,6 @@
       serif = [ "Noto Serif" ];
     };
   };
+
+  settings.autostart = [ "fcitx5" ];
 }
