@@ -59,6 +59,14 @@ with lib; {
         default = [ ];
         description = "Autostart";
       };
+
+      windows = {
+        noBar = mkOption {
+          type = with types; listOf str;
+          default = [ ];
+          description = "Windows without bar";
+        };
+      };
     };
   };
 }

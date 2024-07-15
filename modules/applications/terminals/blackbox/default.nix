@@ -25,8 +25,8 @@ in {
     context-aware-header-bar = false;
   };
 
-  hm.wayland.windowManager.hyprland.settings.windowrule =
-    [ "plugin:hyprbars:nobar,com.raggesilver.BlackBox" ];
-
-  settings = { commands.terminal = "${blackboxPackage}/bin/blackbox"; };
+  settings = {
+    commands.terminal = "${blackboxPackage}/bin/blackbox";
+    windows.noBar = [ "com.raggesilver.BlackBox" ];
+  };
 }

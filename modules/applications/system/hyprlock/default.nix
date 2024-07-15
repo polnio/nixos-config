@@ -12,8 +12,7 @@
   };
 
   os.environment.systemPackages = [ pkgs.hyprlock ];
-  hm.wayland.windowManager.hyprland.settings.exec-once =
-    [ "${pkgs.hyprlock}/bin/hyprlock" ];
+  settings.autostart = [ "${pkgs.hyprlock}/bin/hyprlock" ];
 
   hm.programs.hyprlock = {
     enable = true;

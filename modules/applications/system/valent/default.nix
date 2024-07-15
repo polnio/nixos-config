@@ -4,6 +4,5 @@
     package = pkgs.valent;
   };
 
-  hm.wayland.windowManager.hyprland.settings.windowrule =
-    [ "plugin:hyprbars:nobar,valent" ];
+  settings.windows.noBar = [ "valent" ];
 }

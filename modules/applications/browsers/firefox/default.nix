@@ -232,8 +232,8 @@
   hm.home.file.".mozilla/firefox/default/chrome/firefox-gnome-theme/customChrome.css".source =
     ./customChrome.css;
 
-  hm.wayland.windowManager.hyprland.settings.windowrule =
-    [ "plugin:hyprbars:nobar,firefox" ];
-
-  settings = { commands.browser = "${pkgs.firefox}/bin/firefox"; };
+  settings = {
+    commands.browser = "${pkgs.firefox}/bin/firefox";
+    windows.noBar = [ "firefox" ];
+  };
 }
