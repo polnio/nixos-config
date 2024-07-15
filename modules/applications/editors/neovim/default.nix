@@ -32,7 +32,7 @@
     biome
     clang-tools
     cppcheck
-    cpplint
+    # cpplint
     fd
     gcc
     gnumake
