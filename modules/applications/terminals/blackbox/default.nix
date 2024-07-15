@@ -1,6 +1,14 @@
-{ pkgs, inputs, lib, osConfig, ... }:
-let blackboxPackage = pkgs.blackbox-terminal.override { sixelSupport = true; };
-in {
+{
+  pkgs,
+  inputs,
+  lib,
+  osConfig,
+  ...
+}:
+let
+  blackboxPackage = pkgs.blackbox-terminal.override { sixelSupport = true; };
+in
+{
   inputs.blackbox-catppuccin = {
     url = "github:catppuccin/blackbox";
     flake = false;
@@ -8,8 +16,7 @@ in {
 
   os.environment.systemPackages = [ blackboxPackage ];
 
-  hm.xdg.dataFile."blackbox/schemes/Catppuccin-Mocha.json".source =
-    "${inputs.blackbox-catppuccin}/src/Catppuccin-Mocha.json";
+  hm.xdg.dataFile."blackbox/schemes/Catppuccin-Mocha.json".source = "${inputs.blackbox-catppuccin}/src/Catppuccin-Mocha.json";
 
   hm.dconf.settings."com/raggesilver/BlackBox" = with lib.gvariant; {
     font = "${osConfig.stylix.fonts.monospace.name} Bold 10";

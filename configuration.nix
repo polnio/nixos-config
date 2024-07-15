@@ -1,6 +1,16 @@
-{ lib, pkgs, osConfig, hmConfig, inputs, combinedManager, ... }:
-let user = "polnio";
-in {
+{
+  lib,
+  pkgs,
+  osConfig,
+  hmConfig,
+  inputs,
+  combinedManager,
+  ...
+}:
+let
+  user = "polnio";
+in
+{
   # inputs = { combined-manager.url = "github:flafydev/combined-manager"; };
 
   osModules = [ ./hardware-configuration.nix ];
@@ -31,25 +41,41 @@ in {
   os.users.users.${user} = {
     isNormalUser = true;
     description = user;
-    extraGroups =
-      [ "networkmanager" "wheel" "video" "adbusers" "libvirtd" "incus-admin" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "video"
+      "adbusers"
+      "libvirtd"
+      "incus-admin"
+    ];
     packages = [ ];
   };
 
-  /* os.environment.systemPackages = with pkgs;
-     lib.mkIf (!osConfig.programs.vim.defaultEditor) [ customCat ];
+  /*
+    os.environment.systemPackages = with pkgs;
+    lib.mkIf (!osConfig.programs.vim.defaultEditor) [ customCat ];
   */
 
   os.nix = {
     package = pkgs.nix.overrideAttrs (old: {
-      patches = (old.patches or [ ])
-        ++ (map (file: "${combinedManager}/nix-patches/${file}") (lib.attrNames
-          (lib.filterAttrs (_: type: type == "regular")
-            (builtins.readDir "${combinedManager}/nix-patches"))));
+      patches =
+        (old.patches or [ ])
+        ++ (map (file: "${combinedManager}/nix-patches/${file}") (
+          lib.attrNames (
+            lib.filterAttrs (_: type: type == "regular") (builtins.readDir "${combinedManager}/nix-patches")
+          )
+        ));
     });
     settings = {
-      experimental-features = [ "nix-command" "flakes" ];
-      trusted-users = [ "root" "${user}" ];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
+      trusted-users = [
+        "root"
+        "${user}"
+      ];
     };
   };
   hm.home.stateVersion = "23.11";

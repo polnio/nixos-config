@@ -1,1 +1,4 @@
-{ pkgs, ... }: { os.environment.systemPackages = [ pkgs.modrinth-app ]; }
+{ pkgs, ... }:
+{
+  os.environment.systemPackages = [ pkgs.modrinth-app ];
+}

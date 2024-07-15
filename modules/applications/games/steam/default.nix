@@ -1,1 +1,4 @@
-{ ... }: { os.programs.steam.enable = true; }
+{ ... }:
+{
+  os.programs.steam.enable = true;
+}

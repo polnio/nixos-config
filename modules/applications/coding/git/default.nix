@@ -1,4 +1,5 @@
-{ configDir, ... }: {
+{ configDir, ... }:
+{
   os.programs.git.enable = true;
   hm.programs.git = {
     enable = true;

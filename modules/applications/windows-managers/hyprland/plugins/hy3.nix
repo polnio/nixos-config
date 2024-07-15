@@ -1,6 +1,7 @@
 { pkgs, osConfig, ... }:
 with osConfig.stylix;
-with base16Scheme; {
+with base16Scheme;
+{
   hm.wayland.windowManager.hyprland = {
     plugins = [ pkgs.hyprlandPlugins.hy3 ];
     settings = {

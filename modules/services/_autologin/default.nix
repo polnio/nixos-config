@@ -1,9 +1,12 @@
-{ pkgs, config, ... }: {
+{ pkgs, config, ... }:
+{
   os.systemd.targets."autologin-tty1" = {
     description = "Final";
     requires = [ "multi-user.target" ];
     after = [ "multi-user.target" ];
-    unitConfig = { AllowIsolate = "yes"; };
+    unitConfig = {
+      AllowIsolate = "yes";
+    };
   };
   os.systemd.services."supress-kernel-logging" = {
     description = "Suppress kernel logging to the console";

@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   os.environment.systemPackages = [ pkgs.zsh ];
   hm.programs.zsh = {
     enable = true;

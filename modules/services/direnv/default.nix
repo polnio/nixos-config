@@ -1,4 +1,5 @@
-{ osConfig, ... }: {
+{ osConfig, ... }:
+{
   os.environment.systemPackages = [ osConfig.programs.direnv.package ];
 
   hm.programs.direnv = {

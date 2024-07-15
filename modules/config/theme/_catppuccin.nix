@@ -5,7 +5,8 @@ let
     flavor = "mocha";
     accent = "blue";
   };
-in {
+in
+{
   inputs.blackbox = {
     url = "github:catppuccin/blackbox";
     flake = false;
@@ -32,8 +33,7 @@ in {
     };
   };
 
-  hm.xdg.dataFile."blackbox/schemes/Catppuccin-Mocha.json".source =
-    "${inputs.blackbox}/src/Catppuccin-Mocha.json";
+  hm.xdg.dataFile."blackbox/schemes/Catppuccin-Mocha.json".source = "${inputs.blackbox}/src/Catppuccin-Mocha.json";
 
   hm.dconf.settings."com/raggesilver/BlackBox" = with lib.gvariant; {
     # font = "${osConfig.stylix.fonts.monospace.name} Bold 10";

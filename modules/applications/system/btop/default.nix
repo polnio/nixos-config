@@ -1,12 +1,12 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   os.environment.systemPackages = [ pkgs.btop ];
 
   hm.programs.btop = {
     enable = true;
     settings = {
       force_tty = false;
-      presets =
-        "cpu:1:default,proc:0:default cpu:0:default,mem:0:default,net:0:default cpu:0:block,net:0:tty";
+      presets = "cpu:1:default,proc:0:default cpu:0:default,mem:0:default,net:0:default cpu:0:block,net:0:tty";
       vim_keys = true;
       rounded_corners = true;
       graph_symbol = "block";

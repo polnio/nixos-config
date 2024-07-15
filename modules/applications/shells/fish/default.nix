@@ -1,5 +1,8 @@
-{ ... }: {
-  os.programs.fish = { enable = true; };
+{ ... }:
+{
+  os.programs.fish = {
+    enable = true;
+  };
   hm.programs.fish = {
     enable = true;
     shellInit = ''

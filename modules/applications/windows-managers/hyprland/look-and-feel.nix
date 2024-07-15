@@ -1,5 +1,6 @@
 { osConfig, ... }:
-with osConfig.stylix.base16Scheme; {
+with osConfig.stylix.base16Scheme;
+{
   hm.wayland.windowManager.hyprland.settings = {
     animations = {
       enabled = "yes";
@@ -37,6 +38,9 @@ with osConfig.stylix.base16Scheme; {
       disable_hyprland_logo = true;
       background_color = "0xff${base00}";
     };
-    monitor = [ ",preferred,auto,1" "eDP-1,preferred,1920x1080,1" ];
+    monitor = [
+      ",preferred,auto,1"
+      "eDP-1,preferred,1920x1080,1"
+    ];
   };
 }

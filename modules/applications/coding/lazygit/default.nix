@@ -1,1 +1,4 @@
-{ ... }: { os.programs.lazygit.enable = true; }
+{ ... }:
+{
+  os.programs.lazygit.enable = true;
+}

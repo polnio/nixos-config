@@ -1,1 +1,4 @@
-{ ... }: { hm.programs.bash.enable = true; }
+{ ... }:
+{
+  hm.programs.bash.enable = true;
+}

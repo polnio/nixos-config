@@ -1,1 +1,4 @@
-{ pkgs, ... }: { os.environment.systemPackages = [ pkgs.lunar-client ]; }
+{ pkgs, ... }:
+{
+  os.environment.systemPackages = [ pkgs.lunar-client ];
+}

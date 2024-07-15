@@ -1,4 +1,10 @@
-{ pkgs, inputs, configDir, ... }: {
+{
+  pkgs,
+  inputs,
+  configDir,
+  ...
+}:
+{
   inputs = {
     nvim-spell-fr = {
       url = "http://ftp.vim.org/vim/runtime/spell/fr.utf-8.spl";
@@ -19,8 +25,7 @@
   hm.programs.git = {
     ignores = [ "Session.vim" ];
     extraConfig = {
-      safe.directory =
-        [ "${configDir}/modules/applications/editors/neovim/config" ];
+      safe.directory = [ "${configDir}/modules/applications/editors/neovim/config" ];
     };
   };
 
@@ -44,7 +49,7 @@
     lua-language-server
     luajitPackages.luarocks
     nil
-    nixfmt
+    nixfmt-rfc-style
     nodePackages_latest.typescript-language-server
     python3
     ripgrep
@@ -61,7 +66,11 @@
     UNCRUSTIFY_CONFIG = ./uncrustify.cfg;
   };
 
-  hm.home.shellAliases = { n = "nvim"; };
+  hm.home.shellAliases = {
+    n = "nvim";
+  };
 
-  settings = { commands.editor = "${pkgs.neovide}/bin/neovide"; };
+  settings = {
+    commands.editor = "${pkgs.neovide}/bin/neovide";
+  };
 }

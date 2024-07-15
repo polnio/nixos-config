@@ -1,1 +1,4 @@
-{ pkgs, ... }: { os.environment.systemPackages = [ pkgs.insomnia ]; }
+{ pkgs, ... }:
+{
+  os.environment.systemPackages = [ pkgs.insomnia ];
+}

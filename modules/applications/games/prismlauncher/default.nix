@@ -1,8 +1,8 @@
-{ pkgs, inputs, ... }: {
+{ pkgs, inputs, ... }:
+{
   inputs = {
     prismlauncher-catppuccin = {
-      url =
-        "https://github.com/PrismLauncher/Themes/releases/latest/download/Catppuccin-Mocha-theme.zip";
+      url = "https://github.com/PrismLauncher/Themes/releases/latest/download/Catppuccin-Mocha-theme.zip";
       flake = false;
     };
   };

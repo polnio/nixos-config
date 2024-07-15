@@ -1,1 +1,4 @@
-{ pkgs, ... }: { os.environment.systemPackages = [ pkgs.neofetch ]; }
+{ pkgs, ... }:
+{
+  os.environment.systemPackages = [ pkgs.neofetch ];
+}

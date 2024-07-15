@@ -1,4 +1,10 @@
-{ pkgs, osConfig, hmConfig, ... }: {
+{
+  pkgs,
+  osConfig,
+  hmConfig,
+  ...
+}:
+{
   os.environment.systemPackages = [ pkgs.oh-my-posh ];
 
   hm.programs.oh-my-posh = {
@@ -72,8 +78,7 @@
               invert_powerline = true;
               foreground = "#${base00}";
               background = "#${base0A}";
-              template =
-                " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} ";
+              template = " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} ";
             }
             {
               type = "node";
@@ -82,7 +87,9 @@
               invert_powerline = true;
               foreground = "#${base00}";
               background = "#${base0B}";
-              properties = { fetch_package_manager = true; };
+              properties = {
+                fetch_package_manager = true;
+              };
             }
             {
               type = "status";
@@ -90,15 +97,12 @@
               invert_powerline = true;
               trailing_diamond = " ";
               leading_diamond = "";
-              foreground_templates = [
-                "{{ if eq .Code 0 }}#${base0B}{{ else }}#${base0A}{{ end }}"
-              ];
-              background_templates = [
-                "{{ if eq .Code 0 }}#${base03}{{ else }}#${base08}{{ end }}"
-              ];
-              template =
-                " {{ if eq .Code 0 }}✔{{ else }}{{ .Code }} ✘{{ end }} ";
-              properties = { always_enabled = true; };
+              foreground_templates = [ "{{ if eq .Code 0 }}#${base0B}{{ else }}#${base0A}{{ end }}" ];
+              background_templates = [ "{{ if eq .Code 0 }}#${base03}{{ else }}#${base08}{{ end }}" ];
+              template = " {{ if eq .Code 0 }}✔{{ else }}{{ .Code }} ✘{{ end }} ";
+              properties = {
+                always_enabled = true;
+              };
             }
           ];
         }
@@ -106,16 +110,17 @@
           type = "prompt";
           alignment = "left";
           newline = true;
-          segments = [{
-            type = "text";
-            style = "plain";
-            template = "╰─";
-          }];
+          segments = [
+            {
+              type = "text";
+              style = "plain";
+              template = "╰─";
+            }
+          ];
         }
       ];
       transient_prompt = {
-        foreground_templates =
-          [ "{{ if eq .Code 0 }}#${base0B}{{ else }}#${base08}{{ end }}" ];
+        foreground_templates = [ "{{ if eq .Code 0 }}#${base0B}{{ else }}#${base08}{{ end }}" ];
         background = "transparent";
         template = "❯ ";
       };

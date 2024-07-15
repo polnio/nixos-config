@@ -1,1 +1,4 @@
-{ pkgs, ... }: { os.environment.systemPackages = [ pkgs.ripgrep ]; }
+{ pkgs, ... }:
+{
+  os.environment.systemPackages = [ pkgs.ripgrep ];
+}

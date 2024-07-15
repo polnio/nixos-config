@@ -1,4 +1,10 @@
-{ inputs, pkgs, configFlake, ... }: {
+{
+  inputs,
+  pkgs,
+  configFlake,
+  ...
+}:
+{
   inputs = {
     nw = {
       # url = "github:polnio/nw";
@@ -26,7 +32,6 @@
     # nt = "sudo nixos-rebuild test";
     # ns = "sudo nixos-rebuild switch";
     # nb = "sudo nixos-rebuild boot";
-    nc =
-      "sudo nix-collect-garbage -d && sudo nixos-rebuild boot --flake ${configFlake}";
+    nc = "sudo nix-collect-garbage -d && sudo nixos-rebuild boot --flake ${configFlake}";
   };
 }

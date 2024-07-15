@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   hm.programs.ssh = {
     enable = true;
     matchBlocks = {
@@ -6,7 +7,9 @@
         hostname = "altssh.gitlab.com";
         user = "git";
         port = 443;
-        extraOptions = { PreferredAuthentications = "publickey"; };
+        extraOptions = {
+          PreferredAuthentications = "publickey";
+        };
         identityFile = "~/.ssh/gitlab";
       };
     };

@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   os.environment.systemPackages = [ pkgs.pulseaudio ];
   os.services.pipewire = {
     enable = true;

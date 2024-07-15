@@ -1,1 +1,4 @@
-{ pkgs, ... }: { os.environment.systemPackages = [ pkgs.grim ]; }
+{ pkgs, ... }:
+{
+  os.environment.systemPackages = [ pkgs.grim ];
+}

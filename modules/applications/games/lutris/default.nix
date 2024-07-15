@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   os.environment.systemPackages = [
     (pkgs.lutris.override {
       extraLibraries = pkgs: [
@@ -9,8 +10,7 @@
       ];
     })
   ];
-  hm.xdg.dataFile."qt-plugins".source =
-    "${pkgs.qt5.qtbase.bin}/lib/qt-${pkgs.qt5.qtbase.version}/plugins/platforms";
+  hm.xdg.dataFile."qt-plugins".source = "${pkgs.qt5.qtbase.bin}/lib/qt-${pkgs.qt5.qtbase.version}/plugins/platforms";
 
   settings.windows.noBar = [ "lutris" ];
 }

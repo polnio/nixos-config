@@ -1,1 +1,4 @@
-{ pkgs, ... }: { os.environment.systemPackages = [ pkgs.devenv ]; }
+{ pkgs, ... }:
+{
+  os.environment.systemPackages = [ pkgs.devenv ];
+}

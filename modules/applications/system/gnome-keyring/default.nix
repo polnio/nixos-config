@@ -1,1 +1,4 @@
-{ ... }: { os.services.gnome.gnome-keyring.enable = true; }
+{ ... }:
+{
+  os.services.gnome.gnome-keyring.enable = true;
+}

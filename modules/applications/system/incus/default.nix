@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   os.virtualisation.incus = {
     enable = true;
     package = pkgs.incus;

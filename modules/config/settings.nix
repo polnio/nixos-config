@@ -1,9 +1,14 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 let
-  mapCommand = command: keymapFn:
-    lib.mapNullable keymapFn config.settings.commands.${command};
+  mapCommand = command: keymapFn: lib.mapNullable keymapFn config.settings.commands.${command};
   openLink = link: "${pkgs.xdg-utils}/bin/xdg-open ${link}";
-in {
+in
+{
   settings = {
     keymaps = [
       (mapCommand "applauncher" (applauncher: {

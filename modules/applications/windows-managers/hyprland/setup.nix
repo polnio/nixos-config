@@ -4,13 +4,16 @@ let
     name = "xdg-portals";
     paths = [ pkgs.xdg-desktop-portal-hyprland ];
   };
-in {
+in
+{
   os.environment.systemPackages = [ pkgs.hyprland ];
 
   os.xdg.portal = {
     enable = true;
-    extraPortals =
-      [ pkgs.xdg-desktop-portal-hyprland pkgs.xdg-desktop-portal-gtk ];
+    extraPortals = [
+      pkgs.xdg-desktop-portal-hyprland
+      pkgs.xdg-desktop-portal-gtk
+    ];
     config.common.default = "*";
   };
 
@@ -32,8 +35,7 @@ in {
 
   settings = {
     commands = {
-      screenshot = ''
-        ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp)" - | ${pkgs.swappy}/bin/swappy -f -'';
+      screenshot = ''${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp)" - | ${pkgs.swappy}/bin/swappy -f -'';
     };
   };
 }

@@ -1,1 +1,4 @@
-{ pkgs, ... }: { os.environment.systemPackages = [ pkgs.codeium ]; }
+{ pkgs, ... }:
+{
+  os.environment.systemPackages = [ pkgs.codeium ];
+}

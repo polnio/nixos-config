@@ -1,11 +1,17 @@
-{ pkgs, osConfig, hmConfig, config, ... }: {
+{
+  pkgs,
+  osConfig,
+  hmConfig,
+  config,
+  ...
+}:
+{
   os.services.greetd = {
     enable = true;
     settings = {
       default_session.command = "${pkgs.bash}/bin/bash";
       initial_session = {
-        command =
-          "${hmConfig.wayland.windowManager.hyprland.package}/bin/Hyprland";
+        command = "${hmConfig.wayland.windowManager.hyprland.package}/bin/Hyprland";
         user = config.hmUsername;
       };
     };

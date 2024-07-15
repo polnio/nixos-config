@@ -1,1 +1,4 @@
-{ pkgs, ... }: { os.environment.systemPackages = [ pkgs.wl-clipboard ]; }
+{ pkgs, ... }:
+{
+  os.environment.systemPackages = [ pkgs.wl-clipboard ];
+}

@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   hm.wayland.windowManager.hyprland = {
     plugins = [ pkgs.hyprlandPlugins.hypr-dynamic-cursors ];
     settings.plugin.dynamic-cursors = {

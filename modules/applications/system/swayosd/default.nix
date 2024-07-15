@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   os.services.udev.packages = [ pkgs.swayosd ];
   hm.services.swayosd.enable = true;
 

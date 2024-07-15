@@ -1,1 +1,4 @@
-{ pkgs, ... }: { os.environment.systemPackages = [ pkgs.slurp ]; }
+{ pkgs, ... }:
+{
+  os.environment.systemPackages = [ pkgs.slurp ];
+}

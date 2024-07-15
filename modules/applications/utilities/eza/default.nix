@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   os.environment.systemPackages = [ pkgs.eza ];
   hm.programs.eza = {
     enable = true;

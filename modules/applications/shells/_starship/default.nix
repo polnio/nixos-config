@@ -1,5 +1,8 @@
-{ lib, ... }: {
-  os.programs.starship = { enable = true; };
+{ lib, ... }:
+{
+  os.programs.starship = {
+    enable = true;
+  };
   hm.programs.starship = {
     enable = true;
 
@@ -50,8 +53,7 @@
       };
       git_status = {
         style = "bg:#394260";
-        format =
-          "[[($all_status$ahead_behind )](fg:#89B4FA bg:#394260)]($style)";
+        format = "[[($all_status$ahead_behind )](fg:#89B4FA bg:#394260)]($style)";
       };
       time = {
         disabled = false;

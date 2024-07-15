@@ -1,1 +1,4 @@
-{ ... }: { os.programs.adb.enable = true; }
+{ ... }:
+{
+  os.programs.adb.enable = true;
+}

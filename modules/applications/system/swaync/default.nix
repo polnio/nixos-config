@@ -1,7 +1,7 @@
-{ inputs, ... }: {
+{ inputs, ... }:
+{
   inputs.catppuccin-swaync = {
-    url =
-      "https://github.com/catppuccin/swaync/releases/latest/download/mocha.css";
+    url = "https://github.com/catppuccin/swaync/releases/latest/download/mocha.css";
     flake = false;
   };
   hm.services.swaync = {

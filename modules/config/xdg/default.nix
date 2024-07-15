@@ -1,1 +1,6 @@
-{ ... }: { hm.home.shellAliases = { o = "xdg-open"; }; }
+{ ... }:
+{
+  hm.home.shellAliases = {
+    o = "xdg-open";
+  };
+}

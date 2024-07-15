@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   os.environment.systemPackages = [ pkgs.swappy ];
   hm.home.file.".config/swappy/config".text = ''
     [Default]

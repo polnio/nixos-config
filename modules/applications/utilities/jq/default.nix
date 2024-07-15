@@ -1,1 +1,4 @@
-{ pkgs, ... }: { os.environment.systemPackages = [ pkgs.jq ]; }
+{ pkgs, ... }:
+{
+  os.environment.systemPackages = [ pkgs.jq ];
+}

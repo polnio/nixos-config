@@ -1,1 +1,4 @@
-{ pkgs, ... }: { os.environment.systemPackages = [ pkgs.killall ]; }
+{ pkgs, ... }:
+{
+  os.environment.systemPackages = [ pkgs.killall ];
+}
