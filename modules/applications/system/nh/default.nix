@@ -1,6 +1,6 @@
-{ configDir, ... }: {
+{ configFlake, ... }: {
   os.programs.nh.enable = true;
-  os.environment.variables.FLAKE = "${configDir}?submodules=1";
+  os.environment.variables.FLAKE = configFlake;
 
   /* hm.home.shellAliases = {
        nt = "nh os test";
