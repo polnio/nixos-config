@@ -234,4 +234,6 @@
 
   hm.wayland.windowManager.hyprland.settings.windowrule =
     [ "plugin:hyprbars:nobar,firefox" ];
+
+  settings = { commands.browser = "${pkgs.firefox}/bin/firefox"; };
 }

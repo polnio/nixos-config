@@ -1,11 +1,12 @@
-{ pkgs, inputs, lib, osConfig, ... }: {
+{ pkgs, inputs, lib, osConfig, ... }:
+let blackboxPackage = pkgs.blackbox-terminal.override { sixelSupport = true; };
+in {
   inputs.blackbox-catppuccin = {
     url = "github:catppuccin/blackbox";
     flake = false;
   };
 
-  os.environment.systemPackages =
-    [ (pkgs.blackbox-terminal.override { sixelSupport = true; }) ];
+  os.environment.systemPackages = [ blackboxPackage ];
 
   hm.xdg.dataFile."blackbox/schemes/Catppuccin-Mocha.json".source =
     "${inputs.blackbox-catppuccin}/src/Catppuccin-Mocha.json";
@@ -26,4 +27,6 @@
 
   hm.wayland.windowManager.hyprland.settings.windowrule =
     [ "plugin:hyprbars:nobar,com.raggesilver.BlackBox" ];
+
+  settings = { commands.terminal = "${blackboxPackage}/bin/blackbox"; };
 }

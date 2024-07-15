@@ -62,4 +62,6 @@
   };
 
   hm.home.shellAliases = { n = "nvim"; };
+
+  settings = { commands.editor = "${pkgs.neovide}/bin/neovide"; };
 }
