@@ -44,6 +44,7 @@ in
     extraGroups = [
       "networkmanager"
       "wheel"
+      "input"
       "video"
       "adbusers"
       "libvirtd"

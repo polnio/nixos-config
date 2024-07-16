@@ -70,5 +70,17 @@ in
         command = openLink "https://github.com/polnio";
       }
     ];
+    touchmaps = [
+      (mapCommand "applauncher" (applauncher: {
+        fingers = 4;
+        direction = "down";
+        command = applauncher;
+      }))
+      (mapCommand "shutdownConfirm" (shutdownConfirm: {
+        fingers = 4;
+        direction = "up";
+        command = shutdownConfirm;
+      }))
+    ];
   };
 }
