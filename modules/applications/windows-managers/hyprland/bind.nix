@@ -69,12 +69,18 @@ in
           "SUPER SHIFT, ${x.down}, hy3:movewindow, d"
         ]) mvts
       ))
-      ++ builtins.map parseKeymap (builtins.filter (x: x != null) config.settings.keymaps);
+      ++ builtins.map parseKeymap (
+        builtins.filter (x: x != null && !x.lockscreen) config.settings.keymaps
+      );
     bindm = [
       "SUPER, mouse:272, movewindow"
       "SUPER, mouse:273, resizewindow"
     ];
     bindn = [ ", mouse:272, hy3:focustab, mouse" ];
+
+    bindel = builtins.map parseKeymap (
+      builtins.filter (x: x != null && x.lockscreen) config.settings.keymaps
+    );
 
     gestures = {
       workspace_swipe = "on";

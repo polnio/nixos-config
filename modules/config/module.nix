@@ -47,6 +47,11 @@ with lib;
                   description = "Shift";
                   default = false;
                 };
+                lockscreen = mkOption {
+                  type = bool;
+                  description = "Lockscreen";
+                  default = false;
+                };
                 key = mkOption {
                   type = str;
                   description = "Key";
