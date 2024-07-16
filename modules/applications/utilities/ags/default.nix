@@ -67,7 +67,12 @@ in
         command = ''${agsPackage}/bin/ags -r "globalThis.keyboard.toogleNumLock()"'';
       }
     ];
-    autostart = [ "ags -q; ags" ];
+    autostart = [
+      {
+        command = "ags -q; ags";
+        allowReload = true;
+      }
+    ];
   };
 
 }
