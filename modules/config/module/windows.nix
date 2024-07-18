@@ -2,7 +2,7 @@
 with lib;
 {
   options.settings.windows = {
-    noBar = mkOption {
+    no-bar = mkOption {
       type = with types; listOf str;
       default = [ ];
       description = "Windows without bar";

@@ -243,6 +243,6 @@
 
   settings = {
     commands.browser = "${pkgs.firefox}/bin/firefox";
-    windows.noBar = [ "firefox" ];
+    windows.no-bar = [ "firefox" ];
   };
 }

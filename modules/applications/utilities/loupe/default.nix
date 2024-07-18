@@ -2,5 +2,5 @@
 {
   os.environment.systemPackages = [ pkgs.loupe ];
 
-  settings.windows.noBar = [ "org.gnome.Loupe" ];
+  settings.windows.no-bar = [ "org.gnome.Loupe" ];
 }

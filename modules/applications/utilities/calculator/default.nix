@@ -2,5 +2,5 @@
 {
   os.environment.systemPackages = [ pkgs.gnome-calculator ];
 
-  settings.windows.noBar = [ "org.gnome.Calculator" ];
+  settings.windows.no-bar = [ "org.gnome.Calculator" ];
 }

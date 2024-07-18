@@ -18,7 +18,9 @@ with base16Scheme;
         bar_part_of_window = true;
         bar_precedence_over_border = true;
       };
-      windowrule = builtins.map (window: "plugin:hyprbars:nobar,${window}") config.settings.windows.noBar;
+      windowrule = builtins.map (
+        window: "plugin:hyprbars:nobar,${window}"
+      ) config.settings.windows.no-bar;
     };
   };
 }

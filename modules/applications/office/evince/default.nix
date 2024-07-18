@@ -2,5 +2,5 @@
 {
   os.programs.evince.enable = true;
 
-  settings.windows.noBar = [ "evince" ];
+  settings.windows.no-bar = [ "evince" ];
 }

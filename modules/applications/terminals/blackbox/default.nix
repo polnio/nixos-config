@@ -34,6 +34,6 @@ in
 
   settings = {
     commands.terminal = "${blackboxPackage}/bin/blackbox";
-    windows.noBar = [ "com.raggesilver.BlackBox" ];
+    windows.no-bar = [ "com.raggesilver.BlackBox" ];
   };
 }

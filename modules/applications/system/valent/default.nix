@@ -5,5 +5,5 @@
     package = pkgs.valent;
   };
 
-  settings.windows.noBar = [ "valent" ];
+  settings.windows.no-bar = [ "valent" ];
 }
