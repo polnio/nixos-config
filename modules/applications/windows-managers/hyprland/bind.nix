@@ -99,7 +99,8 @@ in
 
       touchpad = {
         disable_while_typing = false;
-        natural_scroll = "yes";
+        natural_scroll = true;
+        middle_button_emulation = true;
       };
       sensitivity = 0;
     };
