@@ -22,10 +22,6 @@ combinedManager.mkFlake {
   configurations = {
     PocoMachine = {
       system = "x86_64-linux";
-      specialArgs = rec {
-        configDir = "/etc/nixos";
-        configFlake = "${configDir}?submodules=1";
-      };
       modules = [
         ./configuration.nix
         (

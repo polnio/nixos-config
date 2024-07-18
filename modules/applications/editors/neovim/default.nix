@@ -1,7 +1,7 @@
 {
   pkgs,
   inputs,
-  configDir,
+  config,
   ...
 }:
 {
@@ -25,7 +25,7 @@
   hm.programs.git = {
     ignores = [ "Session.vim" ];
     extraConfig = {
-      safe.directory = [ "${configDir}/modules/applications/editors/neovim/config" ];
+      safe.directory = [ "${config.settings.os-config.path}/modules/applications/editors/neovim/config" ];
     };
   };
 

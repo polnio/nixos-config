@@ -34,6 +34,10 @@ in
   # os.networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
   os.networking.networkmanager.enable = true;
   os.networking.hostName = "PocoMachine";
+  settings.os-config = rec {
+    path = "/etc/nixos";
+    flake = "${path}?submodules=1";
+  };
 
   os.hardware.graphics.enable = true;
 

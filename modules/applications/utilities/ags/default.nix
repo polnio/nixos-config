@@ -3,7 +3,7 @@
   osConfig,
   lib,
   inputs,
-  configDir,
+  config,
   ...
 }:
 let
@@ -43,7 +43,7 @@ in
 
   hm.programs.git = {
     extraConfig = {
-      safe.directory = [ "${configDir}/modules/applications/utilities/ags/config" ];
+      safe.directory = [ "${config.settings.os-config.path}/modules/applications/utilities/ags/config" ];
     };
   };
 

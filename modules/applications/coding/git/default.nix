@@ -1,4 +1,4 @@
-{ configDir, ... }:
+{ config, ... }:
 {
   os.programs.git.enable = true;
   hm.programs.git = {
@@ -7,7 +7,7 @@
     userEmail = "polniolino@gmail.com";
     extraConfig = {
       init.defaultBranch = "master";
-      safe.directory = [ configDir ];
+      safe.directory = [ config.settings.os-config.path ];
       push.autoSetupRemote = true;
     };
   };

@@ -1,7 +1,7 @@
 {
   inputs,
   pkgs,
-  configFlake,
+  config,
   ...
 }:
 {
@@ -21,7 +21,7 @@
     enable = true;
     settings = {
       general.shell = "${pkgs.fish}/bin/fish";
-      nix.os_flake = configFlake;
+      nix.os_flake = config.settings.os-config.flake;
     };
   };
 
@@ -32,6 +32,6 @@
     # nt = "sudo nixos-rebuild test";
     # ns = "sudo nixos-rebuild switch";
     # nb = "sudo nixos-rebuild boot";
-    nc = "sudo nix-collect-garbage -d && sudo nixos-rebuild boot --flake ${configFlake}";
+    nc = "sudo nix-collect-garbage -d && sudo nixos-rebuild boot --flake ${config.settings.os-config.flake}";
   };
 }

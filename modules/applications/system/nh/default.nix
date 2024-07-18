@@ -1,7 +1,7 @@
-{ configFlake, ... }:
+{ config, ... }:
 {
   os.programs.nh.enable = true;
-  os.environment.variables.FLAKE = configFlake;
+  os.environment.variables.FLAKE = config.settings.os-config.flake;
 
   /*
     hm.home.shellAliases = {
