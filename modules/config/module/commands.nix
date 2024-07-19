@@ -17,5 +17,6 @@ in
     terminal = mkCommandOption "Terminal";
     browser = mkCommandOption "Browser";
     editor = mkCommandOption "Editor";
+    calculator = mkCommandOption "Calculator";
   };
 }

@@ -11,6 +11,10 @@ in
 {
   settings = {
     keymaps = [
+      (mapCommand "calculator" (calculator: {
+        key = "XF86Calculator";
+        command = calculator;
+      }))
       (mapCommand "applauncher" (applauncher: {
         super = true;
         key = "D";
