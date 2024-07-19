@@ -54,6 +54,7 @@
     };
   };
 
+  os.stylix.targets.plymouth.enable = false;
   os.stylix.targets.fish.enable = false;
   hm.stylix.targets.fish.enable = false;
   hm.stylix.targets.hyprland.enable = false;
