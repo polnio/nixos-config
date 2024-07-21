@@ -22,12 +22,20 @@ combinedManager.mkFlake {
   configurations = {
     PocoMachine = {
       system = "x86_64-linux";
+      specialArgs = {
+        mkUtils = lib: import ./utils { inherit lib; };
+      };
       modules = [
         ./configuration.nix
         (
-          { lib, ... }:
           {
-            imports = (import ./utils { inherit lib; }).modules;
+            lib,
+            config,
+            mkUtils,
+            ...
+          }:
+          {
+            imports = (mkUtils lib).modules;
           }
         )
       ];

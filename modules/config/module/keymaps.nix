@@ -32,6 +32,16 @@ with lib;
               description = "Lockscreen";
               default = false;
             };
+            ignoreModifiers = mkOption {
+              type = bool;
+              description = "Ignore other keys";
+              default = false;
+            };
+            repeat = mkOption {
+              type = bool;
+              description = "Repeat";
+              default = true;
+            };
             key = mkOption {
               type = str;
               description = "Key";

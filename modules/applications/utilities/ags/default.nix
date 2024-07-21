@@ -60,10 +60,14 @@ in
       }
       {
         key = "Caps_Lock";
+        ignoreModifiers = true;
+        repeat = false;
         command = ''${agsPackage}/bin/ags -r "globalThis.keyboard.toogleCapsLock()"'';
       }
       {
         key = "Num_Lock";
+        ignoreModifiers = true;
+        repeat = false;
         command = ''${agsPackage}/bin/ags -r "globalThis.keyboard.toogleNumLock()"'';
       }
     ];
