@@ -20,7 +20,10 @@
   hm.programs.nw = {
     enable = true;
     settings = {
-      general.shell = "${pkgs.fish}/bin/fish";
+      general = {
+        shell = "${pkgs.fish}/bin/fish";
+        interactive_shell = "${pkgs.bash}/bin/bash";
+      };
       nix.os_flake = config.settings.os-config.flake;
     };
   };
