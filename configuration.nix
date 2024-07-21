@@ -1,9 +1,6 @@
 {
   lib,
   pkgs,
-  osConfig,
-  hmConfig,
-  inputs,
   combinedManager,
   ...
 }:
@@ -21,7 +18,10 @@ in
   os.nixpkgs.config.allowUnfree = true;
 
   os.boot.kernelPackages = pkgs.linuxPackages_zen;
-  os.boot.loader.systemd-boot.enable = true;
+  os.boot.loader.systemd-boot = {
+    enable = true;
+    editor = false;
+  };
   os.boot.loader.efi.canTouchEfiVariables = true;
   os.services.asusd.enable = true;
   os.services.udisks2.enable = true;
