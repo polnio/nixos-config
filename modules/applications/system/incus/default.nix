@@ -1,9 +1,9 @@
 { pkgs, ... }:
 {
   os.virtualisation.incus = {
-    enable = true;
+    # enable = true;
     package = pkgs.incus;
     preseed = { };
   };
-  os.networking.nftables.enable = true;
+  # os.networking.nftables.enable = true;
 }
