@@ -42,6 +42,11 @@ with lib;
               description = "Repeat";
               default = true;
             };
+            release = mkOption {
+              type = bool;
+              description = "Release";
+              default = false;
+            };
             key = mkOption {
               type = str;
               description = "Key";

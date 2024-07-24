@@ -100,7 +100,7 @@ in
     ]
     ++ builtins.map (
       keymap: with lib; {
-        "bind${optionalString keymap.repeat "e"}${optionalString keymap.lockscreen "l"}${optionalString keymap.ignoreModifiers "i"}" = [
+        "bind${optionalString keymap.repeat "e"}${optionalString keymap.release "r"}${optionalString keymap.lockscreen "l"}${optionalString keymap.ignoreModifiers "i"}" = [
           "${optionalString keymap.super "SUPER"} ${optionalString keymap.control "CONTROL"} ${optionalString keymap.shift "SHIFT"} ${optionalString keymap.alt "ALT"}, ${keymap.key}, exec, ${keymap.command}"
         ];
       }

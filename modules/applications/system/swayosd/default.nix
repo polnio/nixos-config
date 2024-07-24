@@ -34,5 +34,19 @@
       command = "swayosd-client --brightness lower";
       lockscreen = true;
     }
+    {
+      key = "Caps_Lock";
+      ignoreModifiers = true;
+      repeat = false;
+      release = true;
+      command = "swayosd-client --caps-lock";
+    }
+    {
+      key = "Num_Lock";
+      ignoreModifiers = true;
+      repeat = false;
+      release = true;
+      command = "swayosd-client --num-lock";
+    }
   ];
 }
