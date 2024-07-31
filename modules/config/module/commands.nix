@@ -11,7 +11,10 @@ let
 in
 {
   options.settings.commands = {
-    screenshot = mkCommandOption "Screenshot";
+    screenshot = {
+      region = mkCommandOption "Screenshot region";
+      full = mkCommandOption "Screenshot full";
+    };
     shutdownConfirm = mkCommandOption "Shutdown";
     applauncher = mkCommandOption "Applauncher";
     terminal = mkCommandOption "Terminal";

@@ -5,49 +5,47 @@
   ...
 }:
 let
-  mapCommand = command: keymapFn: lib.mapNullable keymapFn config.settings.commands.${command};
   openLink = link: "${pkgs.xdg-utils}/bin/xdg-open ${link}";
+  mapCommand = command: keymapFn: { inherit command; } // (lib.mapNullable keymapFn command);
+
+  commands = config.settings.commands;
 in
 {
   settings = {
     keymaps = [
-      (mapCommand "calculator" (calculator: {
+      (mapCommand commands.calculator (command: {
         key = "XF86Calculator";
-        command = calculator;
       }))
-      (mapCommand "applauncher" (applauncher: {
+      (mapCommand commands.applauncher (command: {
         super = true;
         key = "D";
-        command = applauncher;
       }))
-      (mapCommand "screenshot" (screenshot: {
+      (mapCommand commands.screenshot.region (command: {
         super = true;
         shift = true;
         key = "S";
-        command = screenshot;
       }))
-      (mapCommand "shutdownConfirm" (shutdownConfirm: {
+      (mapCommand commands.screenshot.full (command: {
+        key = "Print";
+      }))
+      (mapCommand commands.shutdownConfirm (command: {
         super = true;
         shift = true;
         key = "D";
-        command = shutdownConfirm;
       }))
-      (mapCommand "terminal" (terminal: {
+      (mapCommand commands.terminal (command: {
         super = true;
         key = "Return";
-        command = config.settings.commands.terminal;
       }))
-      (mapCommand "browser" (browser: {
+      (mapCommand commands.browser (command: {
         super = true;
         control = true;
         key = "V";
-        command = config.settings.commands.browser;
       }))
-      (mapCommand "editor" (editor: {
+      (mapCommand commands.editor (command: {
         super = true;
         control = true;
         key = "C";
-        command = config.settings.commands.editor;
       }))
       {
         super = true;
@@ -75,15 +73,13 @@ in
       }
     ];
     touchmaps = [
-      (mapCommand "applauncher" (applauncher: {
+      (mapCommand commands.applauncher (command: {
         fingers = 4;
         direction = "down";
-        command = applauncher;
       }))
-      (mapCommand "shutdownConfirm" (shutdownConfirm: {
+      (mapCommand commands.shutdownConfirm (command: {
         fingers = 4;
         direction = "up";
-        command = shutdownConfirm;
       }))
     ];
   };
