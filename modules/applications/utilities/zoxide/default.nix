@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   os.environment.systemPackages = [ pkgs.zoxide ];
   hm.programs.zoxide = {
@@ -8,6 +8,7 @@
   };
 
   hm.home.shellAliases = {
+    zn = "z ${config.settings.os-config.path}";
     zp = "z ~/Documents/prog";
     zt = "z ~/Documents/prog/test";
   };

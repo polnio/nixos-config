@@ -21,8 +21,8 @@
     enable = true;
     settings = {
       general = {
-        shell = "${pkgs.fish}/bin/fish";
-        interactive_shell = "${pkgs.bash}/bin/bash";
+        shell = "${pkgs.bash}/bin/bash";
+        interactive_shell = "${pkgs.fish}/bin/fish";
       };
       nix.os_flake = config.settings.os-config.flake;
     };

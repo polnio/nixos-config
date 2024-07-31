@@ -26,6 +26,7 @@
             {
               type = "text";
               style = "plain";
+              foreground = "#${base04}";
               template = "╭─";
             }
             {
@@ -114,6 +115,7 @@
             {
               type = "text";
               style = "plain";
+              foreground = "#${base04}";
               template = "╰─";
             }
           ];

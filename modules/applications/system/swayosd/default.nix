@@ -39,6 +39,7 @@
       ignoreModifiers = true;
       repeat = false;
       release = true;
+      lockscreen = true;
       command = "swayosd-client --caps-lock";
     }
     {
@@ -46,6 +47,7 @@
       ignoreModifiers = true;
       repeat = false;
       release = true;
+      lockscreen = true;
       command = "swayosd-client --num-lock";
     }
   ];
