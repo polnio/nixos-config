@@ -2,7 +2,10 @@
 let
   xdg_desktop_portal_dir = pkgs.symlinkJoin {
     name = "xdg-portals";
-    paths = [ pkgs.xdg-desktop-portal-hyprland ];
+    paths = [
+      pkgs.xdg-desktop-portal-hyprland
+      pkgs.xdg-desktop-portal-gtk
+    ];
   };
 in
 {
