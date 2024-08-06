@@ -23,9 +23,11 @@
       general = {
         shell = "${pkgs.bash}/bin/bash";
         interactive_shell = "${pkgs.fish}/bin/fish";
+        ui = true;
       };
       nix.os_flake = config.settings.os-config.flake;
     };
+    withUI = true;
   };
 
   hm.home.shellAliases = {

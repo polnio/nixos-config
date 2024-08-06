@@ -364,11 +364,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1721659347,
-        "narHash": "sha256-IpDHKnqg/7hDL5FZ7ZxCrGUOdbQVtYSZPaPRneFtphU=",
-        "ref": "refs/heads/master",
-        "rev": "4fdbc861675a09ee2a16eac57964d744be226a46",
-        "revCount": 28,
+        "dirtyRev": "48a4b808db77f8322e49785944be3fd044bd040a-dirty",
+        "dirtyShortRev": "48a4b80-dirty",
+        "lastModified": 1722894015,
+        "narHash": "sha256-RYcxKFcrzWEFfFUXTL5VqIzf8NwWQK7lKG0CxTkrgJY=",
         "type": "git",
         "url": "file:///home/polnio/Documents/prog/nw"
       },
