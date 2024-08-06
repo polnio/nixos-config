@@ -62,12 +62,16 @@ in
         key = "Caps_Lock";
         ignoreModifiers = true;
         repeat = false;
+        lockscreen = true;
+        release = true;
         command = ''${agsPackage}/bin/ags -r "globalThis.keyboard.toogleCapsLock()"'';
       }
       {
         key = "Num_Lock";
         ignoreModifiers = true;
         repeat = false;
+        lockscreen = true;
+        release = true;
         command = ''${agsPackage}/bin/ags -r "globalThis.keyboard.toogleNumLock()"'';
       }
     ];
