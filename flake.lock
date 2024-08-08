@@ -151,6 +151,18 @@
         "type": "github"
       }
     },
+    "catppuccin-discord": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-jc5Utey6bFdMaKB95hWumwurULfZ25lg8vHEcE6d3ew=",
+        "type": "file",
+        "url": "https://catppuccin.github.io/discord/dist/catppuccin-mocha-blue.theme.css"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://catppuccin.github.io/discord/dist/catppuccin-mocha-blue.theme.css"
+      }
+    },
     "catppuccin-firefox-gnome": {
       "flake": false,
       "locked": {
@@ -393,6 +405,7 @@
       "inputs": {
         "ags": "ags",
         "blackbox-catppuccin": "blackbox-catppuccin",
+        "catppuccin-discord": "catppuccin-discord",
         "catppuccin-firefox-gnome": "catppuccin-firefox-gnome",
         "catppuccin-swaync": "catppuccin-swaync",
         "firefox-gnome-theme": "firefox-gnome-theme",
