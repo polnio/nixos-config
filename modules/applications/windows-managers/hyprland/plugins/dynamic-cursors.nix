@@ -4,10 +4,10 @@
     plugins = [ pkgs.hyprlandPlugins.hypr-dynamic-cursors ];
     settings.plugin.dynamic-cursors = {
       enabled = true;
-      mode = "rotate";
-      rotate = {
-        length = 20;
-        offset = 0.0;
+      mode = "none";
+      shake = {
+        enabled = true;
+        treshold = 1.0;
       };
     };
   };
