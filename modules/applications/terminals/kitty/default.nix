@@ -9,4 +9,5 @@
     };
   };
   settings.commands.terminal = "${pkgs.kitty}/bin/kitty";
+  os.xdg.terminal-exec.settings.default = [ "kitty.desktop" ];
 }
