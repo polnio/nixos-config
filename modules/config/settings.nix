@@ -37,6 +37,11 @@ in
         super = true;
         key = "Return";
       }))
+      (mapCommand commands.fileExplorer (command: {
+        super = true;
+        control = true;
+        key = "E";
+      }))
       (mapCommand commands.browser (command: {
         super = true;
         control = true;

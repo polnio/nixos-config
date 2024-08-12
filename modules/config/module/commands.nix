@@ -18,6 +18,7 @@ in
     shutdownConfirm = mkCommandOption "Shutdown";
     applauncher = mkCommandOption "Applauncher";
     terminal = mkCommandOption "Terminal";
+    fileExplorer = mkCommandOption "File explorer";
     browser = mkCommandOption "Browser";
     editor = mkCommandOption "Editor";
     calculator = mkCommandOption "Calculator";

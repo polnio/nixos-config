@@ -5,4 +5,6 @@
     enableZshIntegration = true;
     enableFishIntegration = true;
   };
+
+  # settings.commands.fileExplorer = "${pkgs.yazi}/bin/yazi";
 }
