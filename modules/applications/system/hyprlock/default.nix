@@ -16,9 +16,12 @@
       };
     };
   };
+  os.security.pam.services.greetd.enableGnomeKeyring = false;
 
   os.environment.systemPackages = [ pkgs.hyprlock ];
-  settings.autostart = [ "${pkgs.hyprlock}/bin/hyprlock" ];
+  settings.commands.lock = "${pkgs.hyprlock}/bin/hyprlock";
+
+  os.security.pam.services.hyprlock.text = "auth include login";
 
   hm.programs.hyprlock = {
     enable = true;

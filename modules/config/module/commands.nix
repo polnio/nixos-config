@@ -11,6 +11,7 @@ let
 in
 {
   options.settings.commands = {
+    lock = mkCommandOption "Lock";
     screenshot = {
       region = mkCommandOption "Screenshot region";
       full = mkCommandOption "Screenshot full";

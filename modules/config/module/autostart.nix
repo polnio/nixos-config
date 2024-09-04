@@ -16,6 +16,11 @@ with lib;
               description = "Allow reload";
               default = false;
             };
+            afterLogin = mkOption {
+              type = with types; bool;
+              description = "After login";
+              default = false;
+            };
           };
         })
       );
