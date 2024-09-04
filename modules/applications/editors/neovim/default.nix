@@ -51,14 +51,18 @@
     nil
     nixfmt-rfc-style
     nodePackages_latest.typescript-language-server
+    pylint
     python3
+    python312Packages.python-lsp-server
     ripgrep
     rustup
+    clippy
     typst-lsp
     uncrustify
     vala-language-server
     vala-lint
     vscode-langservers-extracted
+    vue-language-server
   ];
 
   hm.home.sessionVariables = {
