@@ -82,6 +82,9 @@ in
         "${user}"
       ];
     };
+
+    # Optimise the Nix store
+    settings.auto-optimise-store = true;
   };
   hm.home.stateVersion = "23.11";
   os.system.stateVersion = "23.11";
