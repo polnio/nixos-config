@@ -1,11 +1,13 @@
+# https://github.com/levnikmyskin/hyprland-virtual-desktops
 { pkgs, ... }:
 let
+  xdg_desktop_portals = [
+    pkgs.xdg-desktop-portal-hyprland
+    pkgs.xdg-desktop-portal-gtk
+  ];
   xdg_desktop_portal_dir = pkgs.symlinkJoin {
     name = "xdg-portals";
-    paths = [
-      pkgs.xdg-desktop-portal-hyprland
-      pkgs.xdg-desktop-portal-gtk
-    ];
+    paths = xdg_desktop_portals;
   };
 in
 {
@@ -13,11 +15,8 @@ in
 
   os.xdg.portal = {
     enable = true;
-    extraPortals = [
-      pkgs.xdg-desktop-portal-hyprland
-      pkgs.xdg-desktop-portal-gtk
-    ];
-    config.common.default = "*";
+    extraPortals = xdg_desktop_portals;
+    config.common.default = [ "hyprland,gtk" ];
   };
 
   hm.wayland.windowManager.hyprland = {
