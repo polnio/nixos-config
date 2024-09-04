@@ -3,8 +3,7 @@
   os.environment.systemPackages = [ pkgs.eza ];
   hm.programs.eza = {
     enable = true;
-    enableZshIntegration = true;
-    enableFishIntegration = true;
+    enableNushellIntegration = false;
     git = true;
     icons = true;
   };

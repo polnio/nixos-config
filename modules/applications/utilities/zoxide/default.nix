@@ -1,11 +1,7 @@
 { pkgs, config, ... }:
 {
   os.environment.systemPackages = [ pkgs.zoxide ];
-  hm.programs.zoxide = {
-    enable = true;
-    enableZshIntegration = true;
-    enableFishIntegration = true;
-  };
+  hm.programs.zoxide.enable = true;
 
   hm.home.shellAliases = {
     zn = "z ${config.settings.os-config.path}";

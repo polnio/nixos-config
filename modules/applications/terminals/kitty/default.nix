@@ -5,6 +5,7 @@
     enable = true;
     settings = {
       shell = "${pkgs.fish}/bin/fish";
+      # shell = "${pkgs.nushell}/bin/nu";
       font_size = 11;
     };
   };
