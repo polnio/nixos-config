@@ -34,9 +34,6 @@
     nt = "nw os build -a";
     ns = "nw os build -ab";
     nb = "nw os build -b";
-    # nt = "sudo nixos-rebuild test";
-    # ns = "sudo nixos-rebuild switch";
-    # nb = "sudo nixos-rebuild boot";
-    nc = "sudo nix-collect-garbage -d && sudo nixos-rebuild boot --flake ${config.settings.os-config.flake}";
+    nc = "nw os clean";
   };
 }
