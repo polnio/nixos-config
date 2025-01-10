@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "target": "ES2022",
+    "module": "ES2022",
+    "moduleResolution": "Bundler",
+    // "checkJs": true,
+    // "allowJs": true,
+    "jsx": "react-jsx",
+    "jsxImportSource": "/home/polnio/.local/share/ags/gtk3",
+    "paths": {
+      "astal": [
+        "/home/polnio/.local/share/ags"
+      ],
+      "astal/*": [
+        "/home/polnio/.local/share/ags/*"
+      ]
+    },
+  }
+}

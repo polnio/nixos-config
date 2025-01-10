@@ -1,0 +1,4 @@
+{ ... }:
+{
+  # settings.autostart = [ "fcitx5" ];
+}

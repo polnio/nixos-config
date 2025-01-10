@@ -1,5 +1,5 @@
 # Not a module!
-{ lib, ... }:
+args@{ lib, ... }:
 let
   inherit (builtins) readDir;
   inherit (lib) foldlAttrs optional hasSuffix;
@@ -11,10 +11,17 @@ let
     acc
     // (
       if (type == "regular" && name != "default.nix" && hasSuffix "nix" name) then
-        import (concatPaths [
-          (toString ./.)
-          name
-        ]) { inherit lib utils; }
+        import
+          (concatPaths [
+            (toString ./.)
+            name
+          ])
+          (
+            args
+            // {
+              inherit utils;
+            }
+          )
       else
         { }
     )
