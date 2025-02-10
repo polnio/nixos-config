@@ -1,0 +1,4 @@
+{ ... }:
+{
+  colorschemes.catppuccin.enable = true;
+}

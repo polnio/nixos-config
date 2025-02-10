@@ -2,6 +2,9 @@
 args@{ pkgs, ... }:
 let
   common = import ../common.nix args;
+  app-opener = pkgs.writeShellScriptBin "e" ''
+    hyprctl dispatch exec "bash -ic 'cd $PWD && $@'"
+  '';
 in
 {
   wayland.windowManager.hyprland = {
@@ -20,4 +23,5 @@ in
       ];
     };
   };
+  home.packages = [ app-opener ];
 }

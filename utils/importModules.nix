@@ -26,6 +26,8 @@ rec {
       "home"
     else if __isMode name type "settings" then
       "settings"
+    else if __isMode name type "package" then
+      "package"
     else
       null;
 

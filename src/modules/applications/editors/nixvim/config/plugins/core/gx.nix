@@ -1,0 +1,4 @@
+{ ... }:
+{
+  plugins.gx.enable = true;
+}

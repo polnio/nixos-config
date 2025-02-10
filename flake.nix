@@ -18,6 +18,10 @@
       url = "https://github.com/catppuccin/swaync/releases/latest/download/mocha.css";
       flake = false;
     };
+    cosmic = {
+      url = "github:lilyinstarlight/nixos-cosmic";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     doom-emacs = {
       url = "github:doomemacs/doomemacs";
       flake = false;
@@ -28,17 +32,28 @@
     };
     home-manager = {
       url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     nixpkgs = {
       url = "github:nixos/nixpkgs/nixos-unstable";
     };
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
     nur = {
       url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     nvim-spell-fr = {
       # url = "http://ftp.vim.org/vim/runtime/spell/fr.utf-8.spl";
       url = "http://mirrors.standaloneinstaller.com/vim/runtime/spell/fr.utf-8.spl";
       flake = false;
+    };
+    nvf = {
+      url = "github:NotAShelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     nw = {
       # url = "flake:nw";
@@ -63,9 +78,26 @@
       home-manager,
       ...
     }:
+    let
+      system = "x86_64-linux";
+      pkgs = import nixpkgs { inherit system; };
+      lib = pkgs.lib;
+    in
     {
+      packages.${system} = builtins.listToAttrs (
+        map (
+          path:
+          lib.nameValuePair (builtins.unsafeDiscardStringContext (
+            lib.pipe path [
+              (lib.splitString "/")
+              (lib.init)
+              (lib.last)
+            ]
+          )) (import path { inherit inputs pkgs lib; })
+        ) ((import ./utils/importModules.nix { inherit lib; }).recursiveModules ./src).package
+      );
       nixosConfigurations.PocoMachine = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+        inherit system;
         specialArgs = {
           inherit inputs;
         };

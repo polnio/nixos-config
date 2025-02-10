@@ -3,7 +3,8 @@
   programs.tmux = {
     enable = true;
     shell = "${pkgs.fish}/bin/fish";
-    terminal = "screen-256color";
+    # terminal = "screen-256color";
+    terminal = "xterm-kitty";
     plugins = with pkgs.tmuxPlugins; [
       vim-tmux-navigator
       yank

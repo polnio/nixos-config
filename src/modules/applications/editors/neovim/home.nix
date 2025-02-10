@@ -51,7 +51,8 @@
     rustup
     clippy
     shfmt
-    typst-lsp
+    # typst-lsp
+    tinymist
     uncrustify
     vala-language-server
     vala-lint
