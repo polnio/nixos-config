@@ -424,8 +424,10 @@ return {
   sm({ trig = "part", name = "Partial Derivative" }, fmt([[(diff {})/(diff {}) {}]], { i(1, "f"), i(2, "x"), i(0) })),
   sm({ trig = "pdf", name = "Partial Derivative" }, fmt([[(diff {})/(diff {}) {}]], { i(1, "f"), i(2, "x"), i(0) })),
   sm({ trig = "ddf", name = "Total Derivative" }, fmt([[(d {})/(d {}) {}]], { i(1, "f"), i(2, "x"), i(0) })),
-  sm({ trig = "la+", name = "Laplace {Transform}" }, fmta([[cal(L) lr({ <> }) <>]], { i(1), i(0) })),
-  sm({ trig = "lap", name = "Laplace (Transform)" }, fmta([[cal(L) lr(( <> )) <>]], { i(1), i(0) })),
+  -- sm({ trig = "la+", name = "Laplace {Transform}" }, fmta([[cal(L) lr({ <> }) <>]], { i(1), i(0) })),
+  -- sm({ trig = "lap", name = "Laplace (Transform)" }, fmta([[cal(L) lr(( <> )) <>]], { i(1), i(0) })),
+  sm({ trig = "la+", name = "Laplace {Transform}" }, fmta([[cal(L)(<>) <>]], { i(1), i(0) })),
+  sm({ trig = "lap", name = "Laplace (Transform)" }, fmta([[cal(L)(<>) <>]], { i(1), i(0) })),
 
   -- vectors
   sm({ trig = "cvec", name = "Column Vector" },

@@ -45,7 +45,7 @@ return {
       capabilities = capabilities,
     }
 
-    lspconfig.typst_lsp.setup {
+    lspconfig.tinymist.setup {
       capabilities = capabilities,
     }
 
