@@ -38,8 +38,6 @@ in
   # Configure network proxy if necessary
   # os.networking.proxy.default = "http://user:password@proxy:port/";
   # os.networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-  networking.networkmanager.enable = true;
-  networking.hostName = "PocoMachine";
   settings.os-config = rec {
     path = "/etc/nixos";
     flake = "${path}?submodules=1";
