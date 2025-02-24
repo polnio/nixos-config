@@ -8,4 +8,5 @@
     }))
   ];
   programs.virt-manager.enable = true;
+  environment.pathsToLink = [ "/share/qemu" ];
 }
