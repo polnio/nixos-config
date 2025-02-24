@@ -1,5 +1,6 @@
 return {
   "echasnovski/mini.nvim",
+  lazy = false,
   config = function()
     require("mini.ai").setup()
     require("mini.align").setup()

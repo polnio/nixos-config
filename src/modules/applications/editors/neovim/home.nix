@@ -52,6 +52,10 @@
     clippy
     shfmt
     # typst-lsp
+    typst
+    ghostscript
+    mermaid-cli
+    texliveSmall
     tinymist
     uncrustify
     vala-language-server
