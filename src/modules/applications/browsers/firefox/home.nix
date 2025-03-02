@@ -189,7 +189,7 @@
           url = "https://github.com/chriskempson/base16/blob/main/styling.md";
         }
       ];
-      extensions =
+      extensions.packages =
         with pkgs.nur.repos.rycee.firefox-addons;
         [
           bitwarden
