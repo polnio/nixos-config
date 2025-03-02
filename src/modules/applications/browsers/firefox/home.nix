@@ -10,6 +10,7 @@
       isDefault = true;
 
       settings = {
+        "apz.overscroll.enabled" = false;
         "extensions.activeThemeID" = "firefox-compact-dark@mozilla.org";
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
         "browser.tabs.drawInTitlebar" = true;
