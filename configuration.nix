@@ -39,8 +39,9 @@ in
   # os.networking.proxy.default = "http://user:password@proxy:port/";
   # os.networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
   settings.os-config = rec {
-    path = "/etc/nixos";
-    flake = "${path}?submodules=1";
+    # path = "/etc/nixos";
+    # flake = "${path}?submodules=1";
+    path = "/home/polnio/.config/nixos";
   };
 
   hardware.graphics = {
