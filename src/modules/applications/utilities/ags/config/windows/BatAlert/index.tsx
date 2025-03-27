@@ -7,7 +7,7 @@ const battery = Battery.get_default();
 function BatAlert() {
 	return (
 		<window
-			css={`border: 2px solid ${colors.base08}; border-radius: 10px;`}
+			css={`background: transparent; border: 2px solid ${colors.base08}; border-radius: 10px;`}
 			name="batalert"
 			application={App}
 			layer={Astal.Layer.OVERLAY}
