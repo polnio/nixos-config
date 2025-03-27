@@ -9,4 +9,7 @@
       font_size = 11;
     };
   };
+  home.shellAliases = {
+    icat = "kitty +icat";
+  };
 }
