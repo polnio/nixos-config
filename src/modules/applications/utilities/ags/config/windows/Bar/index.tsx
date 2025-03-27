@@ -5,6 +5,7 @@ import { Outputs } from "./Outputs";
 import { colors } from "../../utils/colors";
 import { Network } from "./Network";
 import { Resources } from "./Resources";
+import { Updates } from "./Updates";
 import { Notifications } from "./Notifications";
 import { Quit } from "./Quit";
 import { Systray } from "./Systray";
@@ -30,6 +31,7 @@ function Bar(gdkmonitor: Gdk.Monitor) {
 					<Outputs />
 					<Network />
 					<Resources />
+					<Updates />
 					<Notifications />
 					<Quit />
 					<Systray />
