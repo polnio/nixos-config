@@ -26,10 +26,12 @@
   };
 
   programs.neovim.extraPackages = with pkgs; [
+    astro-language-server
     biome
     clang-tools
     cppcheck
     # cpplint
+    emmet-ls
     fd
     gcc
     gnumake
@@ -44,6 +46,7 @@
     nil
     nixfmt-rfc-style
     nodePackages_latest.typescript-language-server
+    nodePackages_latest.prettier
     pylint
     python3
     python312Packages.python-lsp-server
