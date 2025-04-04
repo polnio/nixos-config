@@ -133,64 +133,67 @@
           ];
         };
       };
-      bookmarks = [
-        {
-          name = "Home-Manager Options";
-          url = "https://nix-community.github.io/home-manager/options.xhtml";
-        }
-        {
-          name = "Home-Manager Search Options";
-          url = "https://home-manager-options.extranix.com/?release=master";
-        }
-        {
-          name = "NixOS Search Packages";
-          url = "https://search.nixos.org/packages?channel=unstable";
-        }
-        {
-          name = "NixOS Search Options";
-          url = "https://search.nixos.org/options?channel=unstable";
-        }
-        {
-          name = "NixOS Tutorial";
-          url = "https://www.youtube.com/playlist?list=PLko9chwSoP-15ZtZxu64k_CuTzXrFpxPE";
-        }
-        {
-          name = "Whatsapp";
-          url = "https://web.whatsapp.com/";
-        }
-        {
-          name = "GMail";
-          url = "https://mail.google.com";
-        }
-        {
-          name = "GitHub";
-          url = "https://github.com";
-        }
-        {
-          name = "YouTube";
-          url = "https://youtube.com";
-        }
-        {
-          name = "Twitch";
-          url = "https://twitch.tv";
-        }
-        {
-          name = "Tekiens.net";
-          url = "https://tekiens.net";
-        }
-        {
-          name = "Gitlab Tekiens.net";
-          url = "https://gitlab.com/ptlc8/tekiens-net";
-        }
-        {
-          name = "Cy Delta";
-          url = "https://cy.deltahmed.fr";
-        }
-        {
-          name = "Base16 Scheme";
-          url = "https://github.com/chriskempson/base16/blob/main/styling.md";
-        }
-      ];
+      bookmarks = {
+        force = true;
+        settings = [
+          {
+            name = "Home-Manager Options";
+            url = "https://nix-community.github.io/home-manager/options.xhtml";
+          }
+          {
+            name = "Home-Manager Search Options";
+            url = "https://home-manager-options.extranix.com/?release=master";
+          }
+          {
+            name = "NixOS Search Packages";
+            url = "https://search.nixos.org/packages?channel=unstable";
+          }
+          {
+            name = "NixOS Search Options";
+            url = "https://search.nixos.org/options?channel=unstable";
+          }
+          {
+            name = "NixOS Tutorial";
+            url = "https://www.youtube.com/playlist?list=PLko9chwSoP-15ZtZxu64k_CuTzXrFpxPE";
+          }
+          {
+            name = "Whatsapp";
+            url = "https://web.whatsapp.com/";
+          }
+          {
+            name = "GMail";
+            url = "https://mail.google.com";
+          }
+          {
+            name = "GitHub";
+            url = "https://github.com";
+          }
+          {
+            name = "YouTube";
+            url = "https://youtube.com";
+          }
+          {
+            name = "Twitch";
+            url = "https://twitch.tv";
+          }
+          {
+            name = "Tekiens.net";
+            url = "https://tekiens.net";
+          }
+          {
+            name = "Gitlab Tekiens.net";
+            url = "https://gitlab.com/ptlc8/tekiens-net";
+          }
+          {
+            name = "Cy Delta";
+            url = "https://cy.deltahmed.fr";
+          }
+          {
+            name = "Base16 Scheme";
+            url = "https://github.com/chriskempson/base16/blob/main/styling.md";
+          }
+        ];
+      };
       extensions.packages =
         with pkgs.nur.repos.rycee.firefox-addons;
         [
