@@ -18,6 +18,7 @@
       splitjoin = { };
       starter = {
         evaluate_single = true;
+        query_updaters = "";
       };
       surround = { };
       trailspace = { };
