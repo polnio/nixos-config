@@ -88,7 +88,10 @@
     }:
     let
       system = "x86_64-linux";
-      pkgs = import nixpkgs { inherit system; };
+      pkgs = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
       lib = pkgs.lib;
     in
     {
@@ -107,7 +110,7 @@
       nixosConfigurations.PocoMachine = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = {
-          inherit inputs;
+          inherit inputs self;
         };
         modules = [
           home-manager.nixosModules.home-manager
@@ -119,7 +122,7 @@
               utils = import ./utils (
                 args
                 // {
-                  inherit settings;
+                  inherit settings pkgs;
                 }
               );
               modules = utils.recursiveModules ./src;
@@ -137,7 +140,7 @@
               home-manager.useUserPackages = true;
               home-manager.useGlobalPkgs = true;
               home-manager.extraSpecialArgs = {
-                inherit inputs;
+                inherit inputs self;
               };
               home-manager.users.polnio =
                 { config, osConfig, ... }:
