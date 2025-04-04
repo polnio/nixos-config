@@ -5,13 +5,15 @@
     enable = true;
     installCargo = true;
     installRustc = true;
-    settings.rust-analyzer = {
+    settings = {
       cargo = {
         allFeatures = true;
       };
-      checkOnSave = {
-        # command = "clippy";
-      };
+      /*
+        checkOnSave = {
+          # command = "clippy";
+        };
+      */
       # inlayHints = {
       #   chainingHints = true;
       #   parameterHints = true;
