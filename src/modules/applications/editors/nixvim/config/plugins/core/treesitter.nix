@@ -20,6 +20,10 @@ in
       grammarPackages = map (
         filetype: pkgs.vimPlugins.nvim-treesitter.builtGrammars.${filetype}
       ) treesitter;
+      settings = {
+        highlight.enable = true;
+        indent.enable = true;
+      };
     };
 
     plugins.treesitter-textobjects = {
