@@ -26,6 +26,10 @@
         hide_input = false;
         placeholder_text = "Test";
       };
+
+      auth = {
+        fingerprint.enabled = true;
+      };
     };
   };
 }
