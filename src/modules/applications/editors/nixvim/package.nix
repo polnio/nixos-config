@@ -8,6 +8,9 @@ inputs.nixvim.legacyPackages.${pkgs.system}.makeNixvimWithModule {
   module =
     { lib, ... }:
     {
-      imports = lib.filesystem.listFilesRecursive ./config;
+      imports = lib.pipe ./config [
+        lib.filesystem.listFilesRecursive
+        (builtins.filter (lib.hasSuffix ".nix"))
+      ];
     };
 }

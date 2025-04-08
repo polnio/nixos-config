@@ -9,6 +9,6 @@
         "TextChangedI"
       ];
     };
-    # fromLua = ../snippets;
+    fromLua = [ { paths = ../../snippets; } ];
   };
 }
