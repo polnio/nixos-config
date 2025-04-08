@@ -1,6 +1,12 @@
+# This function is copied from:
+# https://github.com/yunfachi/nypkgs/blob/master/lib/umport.nix
+#
+# !!! REMOVING THIS NOTICE VIOLATES THE MIT LICENSE OF THE UMPORT PROJECT !!!
+# This notice must be retained in all copies of this function, including modified versions!
+# The MIT License can be found here:
+# https://github.com/yunfachi/nypkgs/blob/master/LICENSE
 { lib, ... }:
 {
-  # Copied from https://github.com/yunfachi/nypkgs/blob/master/lib/umport.nix
   umport =
     {
       path ? null,
