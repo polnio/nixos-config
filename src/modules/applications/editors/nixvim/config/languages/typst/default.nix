@@ -1,6 +1,5 @@
 { ... }:
 {
-  myOptions.treesitter = [ "typst" ];
   plugins.lsp.servers.tinymist.enable = true;
   plugins.typst-vim = {
     enable = true;
