@@ -1,6 +1,7 @@
 { ... }:
 {
   myOptions.treesitter = [ "rust" ];
+  myOptions.formatters.rust = [ "rustfmt" ];
   plugins.lsp.servers.rust_analyzer = {
     enable = true;
     installCargo = true;
