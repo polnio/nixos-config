@@ -17,7 +17,19 @@ in
         "BufNewFile"
       ];
       settings = {
-        # format_on_save = true;
+        format_on_save.__raw = ''
+          function(bufnr)
+            -- Disable with a global or buffer-local variable
+            if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
+              return
+            end
+            return {
+              lsp_fallback = true,
+              async = false,
+              -- timeout_ms = 500,
+            }
+          end
+        '';
         formatters_by_ft = formatters;
       };
     };
