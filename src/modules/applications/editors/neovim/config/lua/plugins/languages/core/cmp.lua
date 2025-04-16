@@ -56,6 +56,7 @@ return {
         }),
       },
       sources = cmp.config.sources({
+        { name = "supermaven" },
         { name = "otter" },
         { name = "nvim_lsp" },
         -- { name = 'vsnip' }, -- For vsnip users.
