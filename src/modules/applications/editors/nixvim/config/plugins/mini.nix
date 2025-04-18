@@ -9,7 +9,6 @@
       # snippets = {};
       diff = { };
       extra = { };
-      files = { };
       icons = { };
       indentscope = { };
       move = { };
@@ -63,10 +62,6 @@
       (mkKeymap {
         key = "gs";
         action = ''Pick lsp scope="workspace_symbol"'';
-      })
-      (mkKeymap {
-        key = "-";
-        action = "lua MiniFiles.open()";
       })
     ];
 }
