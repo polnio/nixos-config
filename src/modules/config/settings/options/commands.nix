@@ -19,6 +19,7 @@ in
       region = mkCommandOption "Screenshot region";
       full = mkCommandOption "Screenshot full";
     };
+    shell = mkCommandOption "Shell";
     shutdownConfirm = mkCommandOption "Shutdown";
     applauncher = mkCommandOption "Applauncher";
     terminal = mkCommandOption "Terminal";

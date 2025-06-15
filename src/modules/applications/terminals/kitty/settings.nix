@@ -1,4 +1,4 @@
 { pkgs, ... }:
 {
-  settings.commands.terminal = "${pkgs.kitty}/bin/kitty";
+  # settings.commands.terminal = "${pkgs.kitty}/bin/kitty";
 }
