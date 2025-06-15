@@ -1,3 +1,5 @@
+-- https://ejmastnak.com/tutorials/vim-latex/luasnip/
+
 local ls = require("luasnip")
 local s = ls.snippet
 local sn = ls.snippet_node
@@ -554,6 +556,7 @@ return {
 	sm({ trig = "compl", name = "Complement (^complement)", wordTrig = false }, { t("^complement") }),
 
 	-- Symbols
+	sm({ trig = "eq", name = "Equivalent" }, { t("<==> ") }),
 	sm({ trig = "==", name = "equals aligned" }, fmt([[&= {} \]], { i(1) })),
 
 	sm({ trig = "xx", name = "Cross Product" }, { t("times ") }),
@@ -576,9 +579,9 @@ return {
 	sm({ trig = "bmat", name = "[] Matrix" }, fmt([[mat(delim: "[", {}) {}]], { d(1, get_visual), i(0) })),
 
 	-- Derivatives
-	sm({ trig = "ddx", name = "d/dx Total Derivative" }, fmt([[(d {})/(d x) {}]], { i(1, "y"), i(0) })),
+	sm({ trig = "ddx", name = "d/dx Total Derivative" }, fmt([[(dif {})/(dif x) {}]], { i(1, "y"), i(0) })),
 	sm({ trig = "pdx", name = "d/dx Partial Derivative" }, fmt([[(diff {})/(diff x) {}]], { i(1, "y"), i(0) })),
-	sm({ trig = "ddt", name = "d/dt Total Derivative" }, fmt([[(d {})/(d t) {}]], { i(1, "y"), i(0) })),
+	sm({ trig = "ddt", name = "d/dt Total Derivative" }, fmt([[(dif {})/(dif t) {}]], { i(1, "y"), i(0) })),
 	sm({ trig = "pdt", name = "d/dt Partial Derivative" }, fmt([[(diff {})/(diff t) {}]], { i(1, "y"), i(0) })),
 
 	-- Decorators: Over/Under
@@ -602,7 +605,7 @@ return {
 	),
 
 	sm(
-		{ trig = "(%a),.", name = "Vectors", regTrig = true },
+		{ trig = "(%a),,", name = "Vectors", regTrig = true },
 		fmt([[arrow({}) ]], {
 			f(function(_, snip)
 				return snip.captures[1]
@@ -610,12 +613,12 @@ return {
 		})
 	),
 
-	sm(
-		{ trig = "(%a).,", name = "Vectors", regTrig = true },
-		fmt([[arrow({}) ]], {
-			f(function(_, snip)
-				return snip.captures[1]
-			end),
-		})
-	),
+	-- sm(
+	-- 	{ trig = "(%a).,", name = "Vectors", regTrig = true },
+	-- 	fmt([[arrow({}) ]], {
+	-- 		f(function(_, snip)
+	-- 			return snip.captures[1]
+	-- 		end),
+	-- 	})
+	-- ),
 }

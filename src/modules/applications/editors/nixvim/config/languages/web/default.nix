@@ -67,7 +67,7 @@ in
   plugins.lsp.servers.emmet_ls.enable = true;
   plugins.lsp.servers.biome = {
     enable = true;
-    rootDir = ''require('lspconfig').util.root_pattern('biome.json')'';
+    # rootDir = ''require('lspconfig').util.root_pattern('biome.json')'';
   };
   plugins.schemastore.enable = true;
   plugins.lsp.servers.jsonls = {

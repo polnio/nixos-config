@@ -1,8 +1,9 @@
 { ... }:
 {
+  myOptions.treesitter = [ "typst" ];
   plugins.lsp.servers.tinymist.enable = true;
   plugins.typst-vim = {
-    enable = true;
+    enable = false;
     settings = {
       pdf_viewer = "zathura";
       conceal = 1;

@@ -1,7 +1,10 @@
-{ ... }:
+{ pkgs, ... }:
 {
   myOptions.treesitter = [ "rust" ];
   myOptions.formatters.rust = [ "rustfmt" ];
+  extraPackages = [
+    pkgs.rustfmt
+  ];
   plugins.lsp.servers.rust_analyzer = {
     enable = true;
     installCargo = true;
