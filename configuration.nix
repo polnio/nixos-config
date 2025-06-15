@@ -24,6 +24,10 @@ in
   nixpkgs.config.allowUnfree = true;
 
   boot.kernelPackages = pkgs.linuxPackages_zen;
+  boot.kernelParams = [
+    "button.lid_init_state=open"
+    "mem_sleep_default=deep"
+  ];
   boot.loader.systemd-boot = {
     enable = true;
     editor = false;
