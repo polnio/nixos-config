@@ -39,6 +39,7 @@ with config.stylix.base16Scheme;
     };
     monitor = [
       ",preferred,auto,1"
+      "HDMI-A-1,highres,auto-up,1"
     ];
   };
 }

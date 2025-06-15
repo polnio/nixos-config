@@ -13,7 +13,10 @@ import { Systray } from "./Systray";
 function Bar(gdkmonitor: Gdk.Monitor) {
 	return (
 		<window
-			css={`background: transparent; color: ${colors.base05};`}
+			css={`
+        background: transparent;
+        color: ${colors.base05};
+      `}
 			className="Bar"
 			anchor={
 				Astal.WindowAnchor.TOP |
@@ -25,7 +28,7 @@ function Bar(gdkmonitor: Gdk.Monitor) {
 			application={App}
 		>
 			<centerbox css="padding: 10px;">
-				<Workspaces />
+				<Workspaces gdkmonitor={gdkmonitor} />
 				<Time />
 				<box halign={Gtk.Align.END}>
 					<Outputs />

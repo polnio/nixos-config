@@ -33,8 +33,8 @@ let
     else
       "";
 
-  forEachWorkspace =
-    fn: builtins.concatLists (builtins.genList (x: fn (builtins.toString (x + 1))) 9);
+  # forEachWorkspace =
+  #   fn: builtins.concatLists (builtins.genList (x: fn (builtins.toString (x + 1))) 9);
 in
 {
   wayland.windowManager.hyprland.settings = myUtils.recursiveMerge (
@@ -46,16 +46,17 @@ in
             "SUPER, F, fullscreen,"
             "SUPER SHIFT, F, togglefloating,"
             "SUPER, minus, pin"
-            "SUPER, mouse_down, workspace, e+1"
-            "SUPER, mouse_up, workspace, e-1"
             "SUPER SHIFT, Q, killactive,"
-            "SUPER, comma, workspace, e-1"
-            "SUPER, period, workspace, e+1"
+            # "SUPER, mouse_down, workspace, e+1"
+            # "SUPER, mouse_up, workspace, e-1"
+            # "SUPER, comma, workspace, e-1"
+            # "SUPER, period, workspace, e+1"
           ]
-          ++ forEachWorkspace (workspace: [
-            "SUPER, ${workspace}, workspace, ${workspace}"
-            "SUPER SHIFT, ${workspace}, movetoworkspacesilent, ${workspace}"
-          ])
+          # ++ forEachWorkspace (workspace: [
+          #   # TODO: See https://github.com/Duckonaut/split-monitor-workspaces
+          #   "SUPER, ${workspace}, workspace, ${workspace}"
+          #   "SUPER SHIFT, ${workspace}, movetoworkspacesilent, ${workspace}"
+          # ])
           ++ (builtins.concatLists (
             builtins.map (x: [
               "SUPER CONTROL, ${x.left}, resizeactive, -10 0"
