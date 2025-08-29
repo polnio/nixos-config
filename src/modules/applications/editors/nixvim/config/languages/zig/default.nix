@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   myOptions.treesitter = [ "zig" ];
-  myOptions.formatters.rust = [ "zigfmt" ];
+  myOptions.formatters.zig = [ "zigfmt" ];
   extraPackages = [
     pkgs.zig
   ];
