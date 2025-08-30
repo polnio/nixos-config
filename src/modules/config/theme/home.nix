@@ -9,6 +9,8 @@
   stylix.targets.hyprland.enable = false;
   # hm.stylix.targets.emacs.enable = false;
 
+  stylix.targets.firefox.profileNames = [ "default" ];
+
   gtk.iconTheme = {
     name = "Papirus-Dark";
     package = pkgs.papirus-icon-theme;

@@ -15,7 +15,7 @@
       flake = false;
     };
     catppuccin-swaync = {
-      url = "https://github.com/catppuccin/swaync/releases/latest/download/mocha.css";
+      url = "https://github.com/catppuccin/swaync/releases/latest/download/catppuccin-mocha.css";
       flake = false;
     };
     cosmic = {
@@ -70,7 +70,6 @@
     stylix = {
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "home-manager";
       inputs.nur.follows = "nur";
     };
     zen-browser = {
