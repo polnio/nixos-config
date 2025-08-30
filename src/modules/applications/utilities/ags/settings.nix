@@ -1,18 +1,15 @@
-{ hmConfig, ... }:
-let
-  agsPackage = hmConfig.programs.ags.finalPackage;
-in
+{ pkgs, myUtils, ... }:
 {
   settings = {
     commands = {
-      applauncher = "${agsPackage}/bin/ags toggle app-launcher";
-      shutdownConfirm = ''${agsPackage}/bin/ags toggle confirm-shutdown'';
+      applauncher = "${pkgs.ags}/bin/ags toggle -i astal app-launcher";
+      shutdownConfirm = ''${pkgs.ags}/bin/ags toggle -i astal confirm-shutdown'';
     };
     keymaps = [
       {
         super = true;
         key = "Space";
-        command = ''${agsPackage}/bin/ags -r "globalThis.keyboard.switchLayout()"'';
+        command = ''${pkgs.ags}/bin/ags -r "globalThis.keyboard.switchLayout()"'';
       }
       {
         key = "Caps_Lock";
@@ -20,7 +17,7 @@ in
         repeat = false;
         lockscreen = true;
         release = true;
-        command = ''${agsPackage}/bin/ags -r "globalThis.keyboard.toogleCapsLock()"'';
+        command = ''${pkgs.ags}/bin/ags -r "globalThis.keyboard.toogleCapsLock()"'';
       }
       {
         key = "Num_Lock";
@@ -28,11 +25,11 @@ in
         repeat = false;
         lockscreen = true;
         release = true;
-        command = ''${agsPackage}/bin/ags -r "globalThis.keyboard.toogleNumLock()"'';
+        command = ''${pkgs.ags}/bin/ags -r "globalThis.keyboard.toogleNumLock()"'';
       }
     ];
     autostart.ags = {
-      command = "${agsPackage}/bin/ags run";
+      command = "${myUtils.getPackage "ags"}/bin/poco-machine-ags";
       beforeLogin = true;
       afterLogin = false;
     };

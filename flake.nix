@@ -2,10 +2,6 @@
   description = "My NixOS configuration";
 
   inputs = {
-    ags = {
-      url = "github:Aylur/ags";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     blackbox-catppuccin = {
       url = "github:catppuccin/blackbox";
       flake = false;
