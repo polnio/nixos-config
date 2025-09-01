@@ -11,6 +11,8 @@
         shell = "${pkgs.bash}/bin/bash";
         interactive_shell = "${pkgs.fish}/bin/fish";
         ui = true;
+        max_tasks = 1;
+        max_cores = 8;
       };
       nix.os_flake = settings.os-config.flake;
     };
