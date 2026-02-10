@@ -37,6 +37,8 @@
       pull.default = "current";
       pull.rebase = true;
       merge.conflictstyle = "zdiff3";
+      merge.tool = "nvimdiff";
+      mergetool.nvimdiff.cmd = ''${settings.commands.termeditor} -d "$LOCAL" "$REMOTE" "$MERGED"'';
       rebase.missingCommitsCheck = true;
       branch.sort = "-committerdate";
       tag.sort = "-taggerdate";
@@ -53,13 +55,13 @@
   home.shellAliases = {
     g = "git";
     ga = "git add";
-    gau = ''echo -e "a\n*\nq\n" | git add -i > /dev/null'';
+    gau = ''bash -c 'echo -e "a\n*\nq\n" | git add -i > /dev/null' '';
     gaa = "git add -A";
     gr = "git restore";
     grs = "git restore --staged";
     ge = "git rebase -i";
     gs = "git status --short";
-    gc = "EDITOR=nvim git commit";
+    gc = "git commit";
     gd = "git diff --output-indicator-new=' ' --output-indicator-old=' '";
     gds = "git diff --staged";
     gp = "git push";
