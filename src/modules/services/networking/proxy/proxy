@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+DATA_DIR="$HOME/.local/share/proxy-handler"
+DATA_PATH="$DATA_DIR/state"
+
+mkdir -p "$DATA_DIR"
+touch "$DATA_PATH"
+
+case "$1" in
+on) echo -n "on" >"$DATA_PATH" ;;
+off) echo -n "off" >"$DATA_PATH" ;;
+toggle)
+  state=$(cat "$DATA_PATH")
+  if [[ "$state" == "off" ]]; then
+    echo -n "on" >"$DATA_PATH"
+  else
+    echo -n "off" >"$DATA_PATH"
+  fi
+  ;;
+*) echo "Usage: $0 on|off" ;;
+esac

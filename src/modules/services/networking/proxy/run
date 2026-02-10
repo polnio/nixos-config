@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+__PROXY="proxy.cergy.eisti.fr:2128"
+__NO_PROXY="localhost,127.0.1.1/8,::1,vpn.eisti.fr"
+
+DATA_DIR="$HOME/.local/share/proxy-handler"
+DATA_PATH="$DATA_DIR/state"
+
+state=$(cat "$DATA_PATH")
+
+case "$state" in
+on)
+  http_proxy=$__PROXY https_proxy=$__PROXY ftp_proxy=$__PROXY all_proxy=$__PROXY \
+    HTTP_PROXY=$__PROXY HTTPS_PROXY=$__PROXY FTP_PROXY=$__PROXY ALL_PROXY=$__PROXY \
+    no_proxy=$__NO_PROXY NO_PROXY=$__NO_PROXY \
+    $@
+  ;;
+off) $@ ;;
+esac
