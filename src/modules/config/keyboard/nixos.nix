@@ -7,7 +7,7 @@
       addons = [
         pkgs.fcitx5-mozc
         pkgs.fcitx5-gtk
-        pkgs.fcitx5-configtool
+        pkgs.qt6Packages.fcitx5-configtool
       ];
     };
   };

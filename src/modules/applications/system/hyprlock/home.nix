@@ -7,6 +7,10 @@
   programs.hyprlock = {
     enable = true;
     settings = with config.stylix.base16Scheme; {
+      background = {
+        # path = "screenshot";
+        path = config.stylix.image;
+      };
       shape = {
         color = "0xff${base00}";
         size = "500, 200";

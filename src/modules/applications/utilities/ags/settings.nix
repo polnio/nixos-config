@@ -27,6 +27,10 @@
         release = true;
         command = ''${pkgs.ags}/bin/ags -r "globalThis.keyboard.toogleNumLock()"'';
       }
+      {
+        key = "XF86Launch1";
+        command = ''${pkgs.swaynotificationcenter}/bin/swaync-cliend -d'';
+      }
     ];
     autostart.ags = {
       command = "${myUtils.getPackage "ags"}/bin/poco-machine-ags";

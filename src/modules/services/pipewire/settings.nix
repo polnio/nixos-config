@@ -17,5 +17,9 @@
       key = "XF86AudioMicMute";
       command = "${pkgs.pulseaudio}/bin/pactl set-source-mute @DEFAULT_SOURCE@ toggle";
     }
+    {
+      key = "XF86AudioPlay";
+      command = "${pkgs.playerctl}/bin/playerctl play-pause";
+    }
   ];
 }

@@ -28,6 +28,7 @@ in
     "button.lid_init_state=open"
     "mem_sleep_default=deep"
   ];
+  boot.loader.timeout = 0;
   boot.loader.systemd-boot = {
     enable = true;
     editor = false;
@@ -96,6 +97,4 @@ in
     # Optimise the Nix store
     settings.auto-optimise-store = true;
   };
-  # hm.home.stateVersion = "23.11";
-  system.stateVersion = "23.11";
 }
