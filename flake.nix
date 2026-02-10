@@ -46,8 +46,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nvim-spell-fr = {
-      # url = "http://ftp.vim.org/vim/runtime/spell/fr.utf-8.spl";
-      url = "http://mirrors.standaloneinstaller.com/vim/runtime/spell/fr.utf-8.spl";
+      url = "https://ftp.nluug.nl/pub/vim/runtime/spell/fr.utf-8.spl";
       flake = false;
     };
     nvf = {
@@ -61,6 +60,10 @@
     };
     prismlauncher-catppuccin = {
       url = "https://github.com/PrismLauncher/Themes/releases/latest/download/Catppuccin-Mocha-theme.zip";
+      flake = false;
+    };
+    slint-material = {
+      url = "https://material.slint.dev/zip/material-1.0.zip";
       flake = false;
     };
     stylix = {
@@ -152,6 +155,7 @@
                   imports = modules.home;
                   home.stateVersion = "23.11";
                 };
+              system.stateVersion = "23.11";
             }
           )
           ./hardware-configuration.nix

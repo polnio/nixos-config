@@ -1,4 +1,4 @@
 { ... }:
 {
-  plugins.presence-nvim.enable = true;
+  plugins.presence.enable = true;
 }

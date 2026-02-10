@@ -2,7 +2,7 @@
 {
   nixpkgs.overlays = [
     (self: super: {
-      zen-browser = inputs.zen-browser.packages.${super.system}.default;
+      zen-browser = inputs.zen-browser.packages.${super.stdenv.hostPlatform.system}.default;
     })
   ];
 }
