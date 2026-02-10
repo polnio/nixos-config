@@ -38,7 +38,7 @@ with config.stylix.base16Scheme;
       background_color = "0xff${base00}";
     };
     monitor = [
-      ",preferred,auto,1"
+      "eDP-1,preferred,auto,1"
       "HDMI-A-1,highres,auto-up,1"
     ];
   };

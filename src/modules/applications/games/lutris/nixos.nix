@@ -9,6 +9,9 @@
         pkgs.xorg.libICE
         pkgs.gtk3
         # pkgs.qt5.qtwayland
+        pkgs.libadwaita
+        pkgs.gtk4
+        pkgs.libwebp
       ];
       extraPkgs = pkgs: [
         pkgs.wineWowPackages.stable

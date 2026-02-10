@@ -1,4 +1,4 @@
 { pkgs, self, ... }:
 {
-  getPackage = path: self.packages.${pkgs.system}.${path};
+  getPackage = path: self.packages.${pkgs.stdenv.hostPlatform.system}.${path};
 }

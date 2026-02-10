@@ -1,7 +1,7 @@
 { ... }:
 {
   settings.windows.no-bar = [
-    "lutris"
+    "net.lutris.Lutris"
     "hyp.exe"
   ];
 }

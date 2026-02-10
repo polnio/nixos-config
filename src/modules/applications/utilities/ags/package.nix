@@ -6,7 +6,7 @@ pkgs.stdenv.mkDerivation {
   name = "poco-machine-ags";
   src = ./config;
   nativeBuildInputs = with pkgs; [
-    wrapGAppsHook
+    wrapGAppsHook4
     gobject-introspection
     ags
   ];

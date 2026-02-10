@@ -78,10 +78,14 @@ in
           "SUPER, mouse:273, resizewindow"
         ];
 
-        gestures = {
-          workspace_swipe = "on";
-          workspace_swipe_invert = "yes";
-        };
+        # gestures = {
+        #   workspace_swipe = "on";
+        #   workspace_swipe_invert = "yes";
+        # };
+
+        gestures.gesture = [
+          "3, horizontal, workspace"
+        ];
 
         input = {
           kb_layout = "us";

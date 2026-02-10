@@ -25,6 +25,7 @@ in
     terminal = mkCommandOption "Terminal";
     fileExplorer = mkCommandOption "File explorer";
     browser = mkCommandOption "Browser";
+    termeditor = mkCommandOption "Terminal Editor";
     editor = mkCommandOption "Editor";
     calculator = mkCommandOption "Calculator";
   };

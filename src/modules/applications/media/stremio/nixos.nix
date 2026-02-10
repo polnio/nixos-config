@@ -1,4 +1,4 @@
 { pkgs, ... }:
 {
-  environment.systemPackages = [ pkgs.stremio ];
+  # environment.systemPackages = [ pkgs.stremio ];
 }
