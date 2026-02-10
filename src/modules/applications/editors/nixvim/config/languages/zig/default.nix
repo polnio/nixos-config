@@ -3,9 +3,10 @@
   myOptions.treesitter = [ "zig" ];
   myOptions.formatters.zig = [ "zigfmt" ];
   extraPackages = [
-    pkgs.zig
+    # pkgs.zig
   ];
   plugins.lsp.servers.zls = {
     enable = true;
+    package = null;
   };
 }

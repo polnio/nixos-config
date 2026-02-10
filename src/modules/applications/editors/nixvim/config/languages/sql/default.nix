@@ -1,0 +1,4 @@
+{ ... }:
+{
+  myOptions.treesitter = [ "sql" ];
+}

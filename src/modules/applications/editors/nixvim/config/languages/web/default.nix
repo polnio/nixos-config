@@ -18,6 +18,8 @@ in
     "jsdoc"
     "javascript"
     "typescript"
+    "css"
+    "scss"
     "tsx"
     "svelte"
     "astro"
@@ -61,6 +63,7 @@ in
     ];
   };
   plugins.lsp.servers.svelte.enable = true;
+  plugins.lsp.servers.vue_ls.enable = true;
   plugins.lsp.servers.astro.enable = true;
   plugins.lsp.servers.cssls.enable = true;
   plugins.lsp.servers.html.enable = true;

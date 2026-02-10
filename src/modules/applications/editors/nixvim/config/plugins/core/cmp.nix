@@ -34,19 +34,14 @@ in
       };
     };
     settings = {
-      snippet.expand.__raw = # lua
-        ''
-          function(args)
-            require("luasnip").lsp_expand(args.body)
-          end
-        '';
+      snippet.expand.__raw = ''
+        function(args)
+          require("luasnip").lsp_expand(args.body)
+        end
+      '';
       sources = [
-        # { name = "otter"; }
         { name = "nvim_lsp"; }
-        # { name = "vsnip"; } # For vsnip users.
-        { name = "luasnip"; } # For luasnip users.
-        # { name = "ultisnips"; } # For ultisnips users.
-        # { name = "snippy"; } # For snippy users.
+        { name = "luasnip"; }
         { name = "path"; }
         { name = "buffer"; }
       ];

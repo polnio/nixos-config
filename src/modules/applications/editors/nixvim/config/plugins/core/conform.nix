@@ -34,6 +34,34 @@ in
       };
     };
 
+    userCommands = {
+      FormatEnable = {
+        desc = "Enable autoformat-on-save";
+        command.__raw = ''
+          function(args)
+            if args.bang then
+              vim.b.disable_autoformat = false
+            else
+              vim.g.disable_autoformat = false
+            end
+          end
+        '';
+      };
+      FormatDisable = {
+        desc = "Disable autoformat-on-save";
+        bang = true;
+        command.__raw = ''
+          function(args)
+            if args.bang then
+              vim.b.disable_autoformat = true
+            else
+              vim.g.disable_autoformat = true
+            end
+          end
+        '';
+      };
+    };
+
     keymaps = [
       {
         key = "<leader>lf";

@@ -48,8 +48,21 @@ local function in_markup()
 	return vim.api.nvim_eval("typst#in_markup()") == 1
 end
 
+-- local function in_math()
+-- 	return vim.api.nvim_eval("typst#in_math()") == 1
+-- end
+
+-- https://github.com/SylvanFranklin/.config/blob/20b709c8e1751c3397900916f812b5e86bb6b71a/nvim/snippets/typst.lua
 local function in_math()
-	return vim.api.nvim_eval("typst#in_math()") == 1
+	local cursor = vim.treesitter.get_node()
+	-- print("------")
+	while cursor do
+		-- print(vim.inspect(cursor:type()))
+		if cursor:type() == "math" then
+			return true
+		end
+		cursor = cursor:parent()
+	end
 end
 
 local function in_code()
@@ -89,6 +102,9 @@ return {
 	-- ============================================
 
 	-- -------------- TEXT snippets ---------------
+	s({ trig = "cb", name = "colorbox" }, fmt('#colorbox(title: "{}")[{}]', { i(1), i(2) })),
+	s({ trig = "def", name = "colorbox" }, fmt('#colorbox(title: "Définition")[{}]', { i(1) })),
+	s({ trig = "ex", name = "colorbox" }, fmt('#colorbox(title: "Exemple")[{}]', { i(1) })),
 
 	-- FIGURES
 	sb(
@@ -361,7 +377,7 @@ return {
 	sm({ trig = "lrb", name = "Left-Right []" }, fmt([[lr([ {} ]) {}]], { d(1, get_visual), i(0) })),
 	sm({ trig = "lrc", name = "Left-Right {}" }, fmta([[lr({ <> }) <>]], { d(1, get_visual), i(0) })),
 	sm({ trig = "lra", name = "Left-Right <>" }, fmt([[lr(angle.l {} angle.r) {}]], { d(1, get_visual), i(0) })),
-	sm({ trig = "lr|", name = "Left-Right ||" }, fmt([[lr(abs( {} )) {}]], { d(1, get_visual), i(0) })),
+	sm({ trig = "lr|", name = "Left-Right ||" }, fmt([[lr(abs( {} )){}]], { d(1, get_visual), i(0) })),
 
 	sm({ trig = "mcal", name = "Calligraphic variant" }, fmt([[cal({}) {}]], { i(1, "L"), i(0) })),
 
@@ -370,15 +386,15 @@ return {
 	sm({ trig = "bar", name = "Over: bar" }, fmt([[overline({}){}]], { d(1, get_visual), i(0) })),
 
 	-- Operators: Limits, Sums, Integrals, Product
-	sm({ trig = "lim", name = "Limit" }, fmt([[lim_({} -> {}) ]], { i(1, "n"), i(2, "infinity") })),
+	sm({ trig = "lim", name = "Limit" }, fmt([[lim_({} -> {}) ]], { i(1, "n"), i(2, "+infinity") })),
 
 	sm(
 		{ trig = "sum", name = "Summation (Sigma)" },
 		fmt(
 			[[
-      sum_(n={})^({}) {}
+      sum_({}={})^({}) {}
       ]],
-			{ i(1, "index"), i(2, "infinity"), d(3, get_visual) }
+			{ i(1, "var"), i(2, "-infinity"), i(3, "+infinity"), d(4, get_visual) }
 		)
 	),
 
@@ -395,9 +411,9 @@ return {
 		{ trig = "iint", name = "Integral", priority = 300 },
 		fmt(
 			[[
-      integral_({})^({}) {} {}
+      integral_({})^({}) {}{}
       ]],
-			{ i(1, "-infinity"), i(2, "infinity"), d(3, get_visual), i(0) }
+			{ i(1, "-infinity"), i(2, "+infinity"), d(3, get_visual), i(0) }
 		)
 	),
 
@@ -407,7 +423,7 @@ return {
 			[[
       product_({}={})^({}) {} {}
       ]],
-			{ i(1, "n"), i(2, "1"), i(3, "infinity"), d(4, get_visual), i(0) }
+			{ i(1, "n"), i(2, "1"), i(3, "+infinity"), d(4, get_visual), i(0) }
 		)
 	),
 
@@ -426,7 +442,7 @@ return {
 	-- Derivatives
 	sm({ trig = "part", name = "Partial Derivative" }, fmt([[(diff {})/(diff {}) {}]], { i(1, "f"), i(2, "x"), i(0) })),
 	sm({ trig = "pdf", name = "Partial Derivative" }, fmt([[(diff {})/(diff {}) {}]], { i(1, "f"), i(2, "x"), i(0) })),
-	sm({ trig = "ddf", name = "Total Derivative" }, fmt([[(d {})/(d {}) {}]], { i(1, "f"), i(2, "x"), i(0) })),
+	sm({ trig = "ddf", name = "Total Derivative" }, fmt([[(dif {})/(dif {}) {}]], { i(1, "f"), i(2, "x"), i(0) })),
 	sm({ trig = "la+", name = "Laplace {Transform}" }, fmta([[cal(L) lr({ <> }) <>]], { i(1), i(0) })),
 	sm({ trig = "lap", name = "Laplace (Transform)" }, fmta([[cal(L) lr(( <> )) <>]], { i(1), i(0) })),
 
@@ -454,31 +470,8 @@ return {
 	-- ============================================
 
 	-- -------------- TEXT snippets ---------------
-	s(
-		{ trig = "dm", name = "Insert block math" },
-		fmt(
-			[[
-    $ {} $
-
-    {}]],
-			{ i(1), i(0) }
-		)
-	),
-
-	s(
-		{ trig = "mk", name = "Insert inline math" },
-		fmt([[${}${}{} ]], {
-			i(1),
-			f(function(args, snip)
-				if args[1][1] and not string.match(args[1][1], "^[%.,%?%- ]") then
-					return " "
-				else
-					return ""
-				end
-			end, { 2 }),
-			i(2),
-		})
-	),
+	s({ trig = "dm", name = "Insert block math" }, fmt([[$ {} ${}]], { i(1), i(0) })),
+	s({ trig = "mk", name = "Insert inline math" }, fmt([[${}${}]], { i(1), i(2) })),
 
 	-- -------------- MATH snippets ---------------
 	-- Subscripts
@@ -557,6 +550,7 @@ return {
 
 	-- Symbols
 	sm({ trig = "eq", name = "Equivalent" }, { t("<==> ") }),
+	sm({ trig = "imp", name = "Equivalent" }, { t("==> ") }),
 	sm({ trig = "==", name = "equals aligned" }, fmt([[&= {} \]], { i(1) })),
 
 	sm({ trig = "xx", name = "Cross Product" }, { t("times ") }),
@@ -568,15 +562,15 @@ return {
 		{ trig = ".up", name = "Upright variant for single letters" },
 		{ l("upright(" .. l.POSTFIX_MATCH .. ") ") }
 	),
-	sm({ trig = "cl", name = "Ceiling function" }, fmt([[ceil({}) {}]], { d(1, get_visual), i(0) })),
-	sm({ trig = "fl", name = "Floor function" }, fmt([[floor({}) {}]], { d(1, get_visual), i(0) })),
-	sm({ trig = "abs", name = "Absolute value" }, fmt([[abs({}) {}]], { d(1, get_visual), i(0) })),
-	sm({ trig = "rnd", name = "Round-up function" }, fmt([[round({}) {}]], { d(1, get_visual), i(0) })),
-	sm({ trig = "norm", name = "Norm function" }, fmt([[norm({}) {}]], { d(1, get_visual), i(0) })),
+	sm({ trig = "cl", name = "Ceiling function" }, fmt([[ceil({}){}]], { d(1, get_visual), i(0) })),
+	sm({ trig = "fl", name = "Floor function" }, fmt([[floor({}){}]], { d(1, get_visual), i(0) })),
+	sm({ trig = "abs", name = "Absolute value" }, fmt([[abs({}){}]], { d(1, get_visual), i(0) })),
+	sm({ trig = "rnd", name = "Round-up function" }, fmt([[round({}){}]], { d(1, get_visual), i(0) })),
+	sm({ trig = "norm", name = "Norm function" }, fmt([[norm({}){}]], { d(1, get_visual), i(0) })),
 
 	-- Matrices
-	sm({ trig = "pmat", name = "() Matrix" }, fmt([[mat(delim: "(", {}) {}]], { d(1, get_visual), i(0) })),
-	sm({ trig = "bmat", name = "[] Matrix" }, fmt([[mat(delim: "[", {}) {}]], { d(1, get_visual), i(0) })),
+	sm({ trig = "pmat", name = "() Matrix" }, fmt([[mat(delim: "(", {}){}]], { d(1, get_visual), i(0) })),
+	sm({ trig = "bmat", name = "[] Matrix" }, fmt([[mat(delim: "[", {}){}]], { d(1, get_visual), i(0) })),
 
 	-- Derivatives
 	sm({ trig = "ddx", name = "d/dx Total Derivative" }, fmt([[(dif {})/(dif x) {}]], { i(1, "y"), i(0) })),
@@ -588,7 +582,7 @@ return {
 	sm({ trig = "hbar", name = "hbar" }, { t("planck.reduce") }),
 	sm(
 		{ trig = "(%a)bar", name = "Letter bars", regTrig = true },
-		fmt([[overline({}) ]], {
+		fmt([[overline({})]], {
 			f(function(_, snip)
 				return snip.captures[1]
 			end),
@@ -597,7 +591,7 @@ return {
 
 	sm(
 		{ trig = "(%a)hat", name = "Letter hats", regTrig = true },
-		fmt([[hat({}) ]], {
+		fmt([[hat({})]], {
 			f(function(_, snip)
 				return snip.captures[1]
 			end),
@@ -606,7 +600,7 @@ return {
 
 	sm(
 		{ trig = "(%a),,", name = "Vectors", regTrig = true },
-		fmt([[arrow({}) ]], {
+		fmt([[arrow({})]], {
 			f(function(_, snip)
 				return snip.captures[1]
 			end),

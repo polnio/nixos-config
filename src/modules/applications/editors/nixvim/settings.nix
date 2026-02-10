@@ -1,6 +1,7 @@
 { myUtils, settings, ... }:
 {
   settings = {
-    commands.editor = "${settings.commands.terminal} ${myUtils.getPackage "nixvim"}/bin/nvim";
+    commands.termeditor = "${myUtils.getPackage "nixvim"}/bin/nvim";
+    commands.editor = "${settings.commands.terminal} ${settings.commands.termeditor}";
   };
 }

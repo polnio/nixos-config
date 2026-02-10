@@ -1,0 +1,4 @@
+{ ... }:
+{
+  plugins.teamtype.enable = true;
+}

@@ -69,7 +69,7 @@
 
   home.sessionVariables = {
     # EDITOR = "neovide";
-    EDITOR = "nvim";
+    # EDITOR = "nvim";
     UNCRUSTIFY_CONFIG = ./uncrustify.cfg;
   };
 
